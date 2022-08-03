@@ -13,7 +13,7 @@ pipeline {
                         }
          stage('Create allure report'){
             steps{
-            bat "allure generate"
+                  bat 'allure generate'
                 }
                                         }
         stage('generate allure report'){

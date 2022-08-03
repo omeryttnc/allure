@@ -31,6 +31,8 @@ public class BJSSTest {
     public void tearDown() {
         Allure.addAttachment("name for attachment",
                 new ByteArrayInputStream(((TakesScreenshot) chromeDriver).getScreenshotAs(OutputType.BYTES)));
+
+
         chromeDriver.quit();
     }
 
