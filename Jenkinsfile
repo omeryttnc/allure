@@ -21,9 +21,9 @@ pipeline {
 //            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
 //                 }
 //                                         }
-           stage('create allure report'){
+           stage('send report'){
            steps{
-emailext attachLog: true, attachmentsPattern: '\'**/allure-report.zip\'', body: '', compressLog: true, recipientProviders: [buildUser()], subject: 'email alolure', to: 'omeryttnc@gmail.com'                                        }
+emailext attachLog: true, attachmentsPattern: '\'**/allure-report\*'', body: '', compressLog: true, recipientProviders: [buildUser()], subject: 'email alolure', to: 'omeryttnc@gmail.com'                                        }
 }
             }
         }
