@@ -1,0 +1,271 @@
+[33mcommit 3ebe2ae800a81304df192ba01cbc0a7a194a8f28[m[33m ([m[1;36mHEAD -> [m[1;32mAbdullah[m[33m)[m
+Merge: c051c53 1d3431d
+Author: abdkzl <abdkzl.nw@gmail.com>
+Date:   Thu Jun 23 10:35:47 2022 +0200
+
+    Merge branch 'main' into Abdullah
+
+[33mcommit 1d3431d99d1c6910e18492d3b1b7eb035c86011d[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 64e7964 98afed5
+Author: abdkzl <57195466+abdkzl@users.noreply.github.com>
+Date:   Thu Jun 23 10:35:13 2022 +0200
+
+    Merge pull request #413 from highstone-team/omer
+    
+    import
+
+[33mcommit 64e7964eb8c3abf1435cd2179816a4f75195cbcc[m
+Merge: e848b2c 7cb39eb
+Author: abdkzl <57195466+abdkzl@users.noreply.github.com>
+Date:   Thu Jun 23 10:34:58 2022 +0200
+
+    Merge pull request #401 from highstone-team/burak
+    
+    burak
+
+[33mcommit c051c5330da0c850b8b83bbd64f2b38c506be407[m[33m ([m[1;31morigin/Abdullah[m[33m)[m
+Author: abdkzl <abdkzl.nw@gmail.com>
+Date:   Thu Jun 23 09:32:29 2022 +0200
+
+    browser testbase after all yorum kaldirildi
+
+[33mcommit a36f0cc0889be922258089a49980f35d614beec4[m
+Author: abdkzl <abdkzl.nw@gmail.com>
+Date:   Thu Jun 23 09:30:09 2022 +0200
+
+    fastlogin newuser yoruma alindi
+
+[33mcommit 42352647b83a7ce5a59ca228d79769b489c8bc6b[m
+Author: abdkzl <abdkzl.nw@gmail.com>
+Date:   Wed Jun 22 21:41:42 2022 +0200
+
+    conlict2
+
+[33mcommit 1f0241c99f49d14dd117337a3054e6b7faf2debc[m
+Author: abdkzl <abdkzl.nw@gmail.com>
+Date:   Wed Jun 22 20:45:48 2022 +0200
+
+    duzeltme
+
+[33mcommit 0fdc75584a2ed9797cc13e9e08f2e9b602593f29[m
+Merge: 3bd487c e848b2c
+Author: abdkzl <abdkzl.nw@gmail.com>
+Date:   Wed Jun 22 20:43:28 2022 +0200
+
+    conflict
+
+[33mcommit 98afed51480deeab788ae1cf7dc74a0f6385e812[m[33m ([m[1;31morigin/omer[m[33m)[m
+Author: omeryttnc <67800186+omeryttnc@users.noreply.github.com>
+Date:   Wed Jun 22 15:26:35 2022 +0100
+
+    import
+
+[33mcommit 7cb39eb3ba965d61d79c4a4d0adb3afeef54b563[m[33m ([m[1;31morigin/burak[m[33m)[m
+Author: BrkAslm <chemburakaslim@gmail.com>
+Date:   Wed Jun 22 12:13:17 2022 +0100
+
+    2 classa locatorlar, renk enumu ve ProductUpdate clasa
+     testler eklendi
+
+[33mcommit 9f9c00114dff4a43653251aed2ba04d452425a34[m
+Merge: 4590869 e848b2c
+Author: BrkAslm <chemburakaslim@gmail.com>
+Date:   Wed Jun 22 10:28:33 2022 +0100
+
+    Merge remote-tracking branch 'origin/main' into burak
+    
+    # Conflicts:
+    #       src/test/java/pages/HomePage.java
+
+[33mcommit 3bd487c5997c80c96df25aa892ef17c964046b2a[m
+Author: abdkzl <abdkzl.nw@gmail.com>
+Date:   Wed Jun 22 08:52:22 2022 +0200
+
+    -guncelleme
+
+[33mcommit e848b2c38b12326a45567c7900a3cbe887d3e60f[m
+Merge: 5b43570 0ab8818
+Author: omeryttnc <67800186+omeryttnc@users.noreply.github.com>
+Date:   Wed Jun 22 00:53:37 2022 +0100
+
+    Merge pull request #412 from highstone-team/omer
+    
+    import
+
+[33mcommit 0ab88187634ec90416fb3c95feefff461c4bb6db[m
+Author: omeryttnc <67800186+omeryttnc@users.noreply.github.com>
+Date:   Wed Jun 22 00:52:04 2022 +0100
+
+    import
+
+[33mcommit 5b43570a1953a9d57292293708b7268a29b8fda4[m
+Merge: 92ec9da 04f07bd
+Author: omeryttnc <67800186+omeryttnc@users.noreply.github.com>
+Date:   Tue Jun 21 23:33:40 2022 +0100
+
+    Merge pull request #411 from highstone-team/omer
+    
+    import
+
+[33mcommit 04f07bdd7d3aa7d9df4b73d903d48f0a272cdf98[m
+Author: omeryttnc <67800186+omeryttnc@users.noreply.github.com>
+Date:   Tue Jun 21 23:32:10 2022 +0100
+
+    import
+
+[33mcommit 92ec9dacf358b2274e40b71d3f662600d2ac7f5b[m
+Merge: f698ea5 e3717bb
+Author: abdkzl <57195466+abdkzl@users.noreply.github.com>
+Date:   Tue Jun 21 23:03:16 2022 +0200
+
+    Merge pull request #408 from highstone-team/revert-407-Abdullah
+    
+    Revert "Abdullah"
+
+[33mcommit e3717bbabbcd9b10cc2970c2da47c46c6c5eb1ba[m[33m ([m[1;31morigin/revert-407-Abdullah[m[33m)[m
+Merge: 2bcbe85 f698ea5
+Author: abdkzl <57195466+abdkzl@users.noreply.github.com>
+Date:   Tue Jun 21 23:03:10 2022 +0200
+
+    Merge branch 'main' into revert-407-Abdullah
+
+[33mcommit f698ea548dc0b622c2eef83c3ab7278c7b3aaeda[m
+Merge: e7f9f52 10772f0
+Author: abdkzl <57195466+abdkzl@users.noreply.github.com>
+Date:   Tue Jun 21 22:59:04 2022 +0200
+
+    Merge pull request #409 from highstone-team/Abdullah
+    
+    Abdullah
+
+[33mcommit 10772f0651ac3a8586410d58dad5faf22cc22c0c[m
+Merge: cbbee76 e7f9f52
+Author: abdkzl <57195466+abdkzl@users.noreply.github.com>
+Date:   Tue Jun 21 22:58:50 2022 +0200
+
+    Merge branch 'main' into Abdullah
+
+[33mcommit e7f9f52080423907f9d14eeec12676a0bb4c2f74[m
+Merge: e749638 47f3f2c
+Author: abdkzl <57195466+abdkzl@users.noreply.github.com>
+Date:   Tue Jun 21 22:47:30 2022 +0200
+
+    Merge pull request #410 from highstone-team/Emrullah
+    
+    Emrullah
+
+[33mcommit 47f3f2c760293fd01a30a3c9db8d40730a674b04[m[33m ([m[1;31morigin/Emrullah[m[33m)[m
+Merge: 2c6f0bb e749638
+Author: Emrullah <emrullahd69@gmail.com>
+Date:   Tue Jun 21 21:40:06 2022 +0100
+
+    last changesss
+
+[33mcommit 2c6f0bb457d38b5b14e51c11ee92d12bc01de21e[m
+Author: Emrullah <emrullahd69@gmail.com>
+Date:   Tue Jun 21 21:24:32 2022 +0100
+
+    last changes
+
+[33mcommit cbbee76ff65b8a0d816f3c29dd43738beef8b7ad[m
+Merge: efb2b99 e749638
+Author: abdkzl <abdkzl.nw@gmail.com>
+Date:   Mon Jun 20 17:13:19 2022 +0200
+
+    Merge branch 'main' into Abdullah
+
+[33mcommit efb2b999159394fd37bc349c05494f8522b27c27[m
+Author: abdkzl <abdkzl.nw@gmail.com>
+Date:   Mon Jun 20 17:12:42 2022 +0200
+
+    regression duzeltme devami
+
+[33mcommit 2bcbe8507feae159d6f88b8c5036f4c4206db737[m
+Author: abdkzl <57195466+abdkzl@users.noreply.github.com>
+Date:   Sun Jun 19 20:17:27 2022 +0200
+
+    Revert "Abdullah"
+
+[33mcommit e749638de532286b7531ee04a69dfe7eb40a558f[m
+Merge: 2459fdc 61e303c
+Author: abdkzl <57195466+abdkzl@users.noreply.github.com>
+Date:   Sun Jun 19 20:16:02 2022 +0200
+
+    Merge pull request #407 from highstone-team/Abdullah
+    
+    Abdullah
+
+[33mcommit 61e303cd841991ec1ffcb0918b015471b607624a[m
+Merge: 11376a2 2459fdc
+Author: abdkzl <abdkzl.nw@gmail.com>
+Date:   Sun Jun 19 20:15:31 2022 +0200
+
+    USERALL methodlari
+
+[33mcommit 11376a2768f75eeca33322531cd8cc5147bcc9a0[m
+Author: abdkzl <abdkzl.nw@gmail.com>
+Date:   Sun Jun 19 20:07:25 2022 +0200
+
+    bazi regression duzeltmeleri
+
+[33mcommit 2459fdcb98c0ab8a3d027be2b355ed9b8632187e[m
+Merge: 4d48dfc ff3ca9a
+Author: abdkzl <57195466+abdkzl@users.noreply.github.com>
+Date:   Sat Jun 18 12:18:41 2022 +0200
+
+    Merge pull request #406 from highstone-team/omer
+    
+    alici ve saticiyi degistirdim
+
+[33mcommit ff3ca9a9db5b2c3501722bf0d4054189ea78cd38[m
+Author: omeryttnc <67800186+omeryttnc@users.noreply.github.com>
+Date:   Sat Jun 18 09:51:10 2022 +0100
+
+    alici ve saticiyi degistirdim
+
+[33mcommit de6689d561c4eecf6465f0074b258c43379c102b[m
+Author: omeryttnc <67800186+omeryttnc@users.noreply.github.com>
+Date:   Sat Jun 18 09:15:18 2022 +0100
+
+    alici ve saticiyi degistirdim
+
+[33mcommit 5265f544de65791fcb256306878f83016252df5e[m
+Author: Emrullah <emrullahd69@gmail.com>
+Date:   Fri Jun 17 23:45:33 2022 +0100
+
+    last changes
+
+[33mcommit 4d48dfcae8e274ccad89dd8ab11a5ffa6c4d194d[m
+Merge: 8a7b23d 6f07375
+Author: abdkzl <57195466+abdkzl@users.noreply.github.com>
+Date:   Fri Jun 17 19:41:00 2022 +0200
+
+    Merge pull request #405 from highstone-team/omer
+    
+    canli da ki facebook apple id login ler simdilik kaldirildi
+
+[33mcommit 6f0737562dc6f23f6b4dad4e0b161011ca8754db[m
+Author: omeryttnc <67800186+omeryttnc@users.noreply.github.com>
+Date:   Fri Jun 17 09:15:36 2022 +0100
+
+    canli da ki facebook apple id login ler simdilik kaldirildi
+
+[33mcommit 8a7b23db499422c65d29c9c9adfd60fc54202702[m
+Merge: fb8c649 f7cb833
+Author: abdkzl <57195466+abdkzl@users.noreply.github.com>
+Date:   Fri Jun 17 08:28:14 2022 +0200
+
+    Merge pull request #404 from highstone-team/omer
+    
+    Omer
+
+[33mcommit f7cb83331ea6fb9a9fb16182724ec52487a42224[m
+Merge: 82494cb fb8c649
+Author: omeryttnc <67800186+omeryttnc@users.noreply.github.com>
+Date:   Thu Jun 16 19:51:58 2022 +0100
+
+    Merge branch 'main' into omer
+
+[33mcommit 82494cb8ad2a3cbea80477070fd9454c530cee17[m
+Author: omeryttnc <67800186+omeryttnc@users.noreply.github.com>
+Date:   Thu Jun

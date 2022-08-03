@@ -1,0 +1,16 @@
+/target/
+/*.idea
+/*.iml
+/*.png
+/*.log
+/*.dbnavigator.xml
+/.classpath
+/.project
+/.settings/org.eclipse.jdt.apt.core.prefs
+/.settings/org.eclipse.jdt.core.prefs
+/.settings/org.eclipse.m2e.core.prefs
+/allure-results/
+/*gz
+/src/test/resources/testdata/urban_test_results.db
+/src/test/java/Tests/Mobile/BaseClass.java
+/*.DS_Store

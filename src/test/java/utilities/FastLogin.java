@@ -1,0 +1,229 @@
+package utilities;
+
+import driver.DriverFactoryImplementation;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.html5.LocalStorage;
+import org.openqa.selenium.html5.WebStorage;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class FastLogin {
+    static String testSaticikey1 = "a27c6fac85ae1295535e42c9d3e3f305";
+    static String testSaticikey2 = "e3e1601fca9c429344c15527cd542142";
+    static String testSaticivalue1 = "eyJpYXQiOjE2NTIyMDU3NzQsImV4cCI6MTY4MzMwOTc3NCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoic2F0aWNpX21haWxAbWFpbHNhYy5jb20iLCJpZCI6MzA2LCJmaXJzdE5hbWUiOiJUZXN0IiwicGljdHVyZSI6bnVsbCwiZ29vZ2xlSWQiOm51bGwsImZhY2Vib29rSWQiOm51bGwsImxpbmtlZGluSWQiOm51bGwsImdpdGh1YklkIjpudWxsLCJhcHBsZUlkIjpudWxsLCJpc1ZlcmlmaWVkIjpmYWxzZSwicGhvbmUiOm51bGwsImNyZWF0ZWQiOnsiZGF0ZSI6IjIwMjItMDUtMTAgMTg6MDE6MTMuMDAwMDAwIiwidGltZXpvbmVfdHlwZSI6MywidGltZXpvbmUiOiJVVEMifSwicGF5cGFsQWNjb3VudElkIjpudWxsLCJsYXQiOm51bGwsImxuZyI6bnVsbCwiYnJvd3Nlck5vdGlmaWNhdGlvbnMiOmZhbHNlLCJhbGxvd0Fub255bW91c0NoYXQiOnRydWUsInppcENvZGUiOiI5NTEwOSIsImRlbGl2ZXJ5VHlwZSI6W10sIm1heERlbGl2ZXJ5UmFuZ2UiOjAsImZyZWVEZWxpdmVyeVJhbmdlIjowLCJtaW5GcmVlRGVsaXZlcnlPcmRlciI6MCwicGVyTWlsZUNvc3QiOjAsImF2YWlsYWJpbGl0eSI6bnVsbCwiZXN0aW1hdGVkRGVsaXZlcnlUaW1lIjpbXSwiYXZhaWxhYmlsaXR5QnJhbmNoIjpudWxsLCJtaWRkbGVOYW1lIjoiIiwibGFzdE5hbWUiOiJTYXRpY2kiLCJmbGV4aWJsZURlbGl2ZXJ5T3B0aW9ucyI6W119";
+    static String testSaticivalue2 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NTIyMDU3NzQsImV4cCI6MTY4MzMwOTc3NCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoic2F0aWNpX21haWxAbWFpbHNhYy5jb20iLCJpZCI6MzA2LCJmaXJzdE5hbWUiOiJUZXN0IiwicGljdHVyZSI6bnVsbCwiZ29vZ2xlSWQiOm51bGwsImZhY2Vib29rSWQiOm51bGwsImxpbmtlZGluSWQiOm51bGwsImdpdGh1YklkIjpudWxsLCJhcHBsZUlkIjpudWxsLCJpc1ZlcmlmaWVkIjpmYWxzZSwicGhvbmUiOm51bGwsImNyZWF0ZWQiOnsiZGF0ZSI6IjIwMjItMDUtMTAgMTg6MDE6MTMuMDAwMDAwIiwidGltZXpvbmVfdHlwZSI6MywidGltZXpvbmUiOiJVVEMifSwicGF5cGFsQWNjb3VudElkIjpudWxsLCJsYXQiOm51bGwsImxuZyI6bnVsbCwiYnJvd3Nlck5vdGlmaWNhdGlvbnMiOmZhbHNlLCJhbGxvd0Fub255bW91c0NoYXQiOnRydWUsInppcENvZGUiOiI5NTEwOSIsImRlbGl2ZXJ5VHlwZSI6W10sIm1heERlbGl2ZXJ5UmFuZ2UiOjAsImZyZWVEZWxpdmVyeVJhbmdlIjowLCJtaW5GcmVlRGVsaXZlcnlPcmRlciI6MCwicGVyTWlsZUNvc3QiOjAsImF2YWlsYWJpbGl0eSI6bnVsbCwiZXN0aW1hdGVkRGVsaXZlcnlUaW1lIjpbXSwiYXZhaWxhYmlsaXR5QnJhbmNoIjpudWxsLCJtaWRkbGVOYW1lIjoiIiwibGFzdE5hbWUiOiJTYXRpY2kiLCJmbGV4aWJsZURlbGl2ZXJ5T3B0aW9ucyI6W119.P7BVd-Wlh0KNjgCuJ6U1wTGduLaOJQh9bn98uAMOKZ7R78X4mXbBXY9oyagvrardm46jvHl4Xdy2gsII3xmtEwee2XMhb0wcVnTNwVuRrHRqB8QvXcsJ35WXWnlRjalUv-4CgCi_Uxv0HJDZREWrrRYhHPlwVI4zqHBf8fgQUrv2Ejt0RbIpnpNOs3LFuEZSpmlH8monLJZInARM7OUHVN71M3RPp25jlazKaXt9RDBJCSoWGiHT-UNwj2MrumGKgTPXR7ngPs1dpR78qNzTYx2LO6bE4PRGZMCGz0vaCRTtL7L0Mg0VzJcTyhHy2GBOAgJGuoQN9cvx2gwVRgvrHQ";
+
+    static String testAliciKey1 = "a27c6fac85ae1295535e42c9d3e3f305";
+    static String testAlicikey2 = "e3e1601fca9c429344c15527cd542142";
+    static String testAlicivalue1 = "eyJpYXQiOjE2NTIyMDU5MzQsImV4cCI6MTY4MzMwOTkzNCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoiYWxpY2lfbWFpbEBtYWlsc2FjLmNvbSIsImlkIjozMDcsImZpcnN0TmFtZSI6IlRlc3QiLCJwaWN0dXJlIjpudWxsLCJnb29nbGVJZCI6bnVsbCwiZmFjZWJvb2tJZCI6bnVsbCwibGlua2VkaW5JZCI6bnVsbCwiZ2l0aHViSWQiOm51bGwsImFwcGxlSWQiOm51bGwsImlzVmVyaWZpZWQiOmZhbHNlLCJwaG9uZSI6bnVsbCwiY3JlYXRlZCI6eyJkYXRlIjoiMjAyMi0wNS0xMCAxODowMTo1Mi4wMDAwMDAiLCJ0aW1lem9uZV90eXBlIjozLCJ0aW1lem9uZSI6IlVUQyJ9LCJwYXlwYWxBY2NvdW50SWQiOm51bGwsImxhdCI6bnVsbCwibG5nIjpudWxsLCJicm93c2VyTm90aWZpY2F0aW9ucyI6ZmFsc2UsImFsbG93QW5vbnltb3VzQ2hhdCI6dHJ1ZSwiemlwQ29kZSI6Ijk1MTA5IiwiZGVsaXZlcnlUeXBlIjpbXSwibWF4RGVsaXZlcnlSYW5nZSI6MCwiZnJlZURlbGl2ZXJ5UmFuZ2UiOjAsIm1pbkZyZWVEZWxpdmVyeU9yZGVyIjowLCJwZXJNaWxlQ29zdCI6MCwiYXZhaWxhYmlsaXR5IjpudWxsLCJlc3RpbWF0ZWREZWxpdmVyeVRpbWUiOltdLCJhdmFpbGFiaWxpdHlCcmFuY2giOm51bGwsIm1pZGRsZU5hbWUiOiIiLCJsYXN0TmFtZSI6IkFsaWNpIiwiZmxleGlibGVEZWxpdmVyeU9wdGlvbnMiOltdfQ";
+    static String testAlicivalue2 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NTIyMDU5MzQsImV4cCI6MTY4MzMwOTkzNCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoiYWxpY2lfbWFpbEBtYWlsc2FjLmNvbSIsImlkIjozMDcsImZpcnN0TmFtZSI6IlRlc3QiLCJwaWN0dXJlIjpudWxsLCJnb29nbGVJZCI6bnVsbCwiZmFjZWJvb2tJZCI6bnVsbCwibGlua2VkaW5JZCI6bnVsbCwiZ2l0aHViSWQiOm51bGwsImFwcGxlSWQiOm51bGwsImlzVmVyaWZpZWQiOmZhbHNlLCJwaG9uZSI6bnVsbCwiY3JlYXRlZCI6eyJkYXRlIjoiMjAyMi0wNS0xMCAxODowMTo1Mi4wMDAwMDAiLCJ0aW1lem9uZV90eXBlIjozLCJ0aW1lem9uZSI6IlVUQyJ9LCJwYXlwYWxBY2NvdW50SWQiOm51bGwsImxhdCI6bnVsbCwibG5nIjpudWxsLCJicm93c2VyTm90aWZpY2F0aW9ucyI6ZmFsc2UsImFsbG93QW5vbnltb3VzQ2hhdCI6dHJ1ZSwiemlwQ29kZSI6Ijk1MTA5IiwiZGVsaXZlcnlUeXBlIjpbXSwibWF4RGVsaXZlcnlSYW5nZSI6MCwiZnJlZURlbGl2ZXJ5UmFuZ2UiOjAsIm1pbkZyZWVEZWxpdmVyeU9yZGVyIjowLCJwZXJNaWxlQ29zdCI6MCwiYXZhaWxhYmlsaXR5IjpudWxsLCJlc3RpbWF0ZWREZWxpdmVyeVRpbWUiOltdLCJhdmFpbGFiaWxpdHlCcmFuY2giOm51bGwsIm1pZGRsZU5hbWUiOiIiLCJsYXN0TmFtZSI6IkFsaWNpIiwiZmxleGlibGVEZWxpdmVyeU9wdGlvbnMiOltdfQ.leePwlodDCVtSpKa9Q91ymPCeik-qUOTPE3ZdRZzmcMEn_R49k18K3KV6sVbUSwW1qD16Ez19_y0K_hY11AgkHyXwyB9xPwvU4qs3WBF47ohuvX8ExmgNCLvA1v3dYTVyAKu5EzMfZlXgrLbLx7zJB7NOcEA8zo8sjzteI2ylPXFgPVg3HPRK-afhdtIGECQy-Wku0KWOG29MPNaXceK5wwbtUmOqoXTSF13eReOYckfkzPTwuyN4g2OfMcw0M1w-jjzIHWUleZv0c3ydiAvSAdmzNQCm0DbqDC3RQfBYlgo5lJypH0JZLEU0PsfGVFpn4R6TlZbDBQm3zYSBMxICw";
+
+    static String canliSaticikey2 = "e3e1601fca9c429344c15527cd542142";
+    static String canliSaticikey1 = "a27c6fac85ae1295535e42c9d3e3f305";
+    static String canliSaticivalue2 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NDc5NzcyNjcsImV4cCI6MTY3OTA4MTI2Nywicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9TRUxMRVIiXSwiZW1haWwiOiJjYW5saV9zYXRpY2lAbWFpbHNhYy5jb20iLCJpZCI6MjI1LCJmaXJzdE5hbWUiOiJ0ZXN0IGNhbmxpIHNhdGljaSIsInBpY3R1cmUiOm51bGwsImdvb2dsZUlkIjpudWxsLCJmYWNlYm9va0lkIjpudWxsLCJsaW5rZWRpbklkIjpudWxsLCJnaXRodWJJZCI6bnVsbCwiYXBwbGVJZCI6bnVsbCwiaXNWZXJpZmllZCI6ZmFsc2UsInBob25lIjoiMjAxOTU1NzY3NzkiLCJjcmVhdGVkIjp7ImRhdGUiOiIyMDIxLTEyLTA3IDEwOjIwOjEzLjAwMDAwMCIsInRpbWV6b25lX3R5cGUiOjMsInRpbWV6b25lIjoiVVRDIn0sInBheXBhbEFjY291bnRJZCI6bnVsbCwibGF0Ijo1NC45NzM5MzM4LCJsbmciOi0xLjY1ODA4MjcsImJyb3dzZXJOb3RpZmljYXRpb25zIjpmYWxzZSwiYWxsb3dBbm9ueW1vdXNDaGF0Ijp0cnVlLCJ6aXBDb2RlIjpudWxsLCJkZWxpdmVyeVR5cGUiOlsiQlVZRVJfUElDS1VQIl0sIm1heERlbGl2ZXJ5UmFuZ2UiOjAsImZyZWVEZWxpdmVyeVJhbmdlIjowLCJtaW5GcmVlRGVsaXZlcnlPcmRlciI6MCwicGVyTWlsZUNvc3QiOjAsImF2YWlsYWJpbGl0eSI6IjA4OjAwLTE3OjAwIiwiZXN0aW1hdGVkRGVsaXZlcnlUaW1lIjpbXSwiYXZhaWxhYmlsaXR5QnJhbmNoIjoiIiwibWlkZGxlTmFtZSI6IiIsImxhc3ROYW1lIjoidGVzdCIsImZsZXhpYmxlRGVsaXZlcnlPcHRpb25zIjpbXX0.e9UdwpaQw9TG1i6v6SQ--4WXAA0YDAoWoPk2IanBdd5QBkyban9o2Tt1Pvhpy7mE0bSEJLITSQIt-jjKLKnz5NhXcYWs8KIj7wYMBNFgq13MhrBil9F0Eohg0V0NXOSSjrP-c17kj_Q0Xt4u0WAAp3163QQbfBfsBd_0vPWLOdi-OpWK5-JQrdIB6azxspUp_eLM1p218Di_MS8XMSKbsDVEFwEPJbmo5yl12u6AGNr-Eg8w0kAMB3QRYI4jiDZNzYKohsH2GGx8uKZc48CtibAhcGgTtHcl_pPafFH4t-2XMuJS2u_3WWwLMxN4nDLhgCcUwO5DMfXfUbVZ4EjKTw";
+    static String canliSaticivalue1 = "eyJpYXQiOjE2NDA5MDc1ODUsImV4cCI6MTY3MjAxMTU4NSwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9TRUxMRVIiXSwiZW1haWwiOiJjYW5saV9zYXRpY2lAbWFpbHNhYy5jb20iLCJpZCI6MjI1LCJmaXJzdE5hbWUiOiJ0ZXN0IGNhbmxpIHNhdGljaSIsInBpY3R1cmUiOm51bGwsImdvb2dsZUlkIjpudWxsLCJmYWNlYm9va0lkIjpudWxsLCJsaW5rZWRpbklkIjpudWxsLCJnaXRodWJJZCI6bnVsbCwiYXBwbGVJZCI6bnVsbCwiaXNWZXJpZmllZCI6ZmFsc2UsInBob25lIjpudWxsLCJjcmVhdGVkIjp7ImRhdGUiOiIyMDIxLTEyLTA3IDEwOjIwOjEzLjAwMDAwMCIsInRpbWV6b25lX3R5cGUiOjMsInRpbWV6b25lIjoiVVRDIn0sInBheXBhbEFjY291bnRJZCI6bnVsbCwibGF0Ijo1NC45NzM5MDcxLCJsbmciOi0xLjY1Nzk5MDUsImJyb3dzZXJOb3RpZmljYXRpb25zIjpmYWxzZSwiYWxsb3dBbm9ueW1vdXNDaGF0Ijp0cnVlLCJ6aXBDb2RlIjpudWxsLCJkZWxpdmVyeVR5cGUiOlsiQlVZRVJfUElDS1VQIl0sIm1heERlbGl2ZXJ5UmFuZ2UiOjAsImZyZWVEZWxpdmVyeVJhbmdlIjowLCJtaW5GcmVlRGVsaXZlcnlPcmRlciI6MCwicGVyTWlsZUNvc3QiOjAsImF2YWlsYWJpbGl0eSI6IjA4OjAwLTE3OjAwIiwiZXN0aW1hdGVkRGVsaXZlcnlUaW1lIjpbXSwiYXZhaWxhYmlsaXR5QnJhbmNoIjoiIiwibWlkZGxlTmFtZSI6IiIsImxhc3ROYW1lIjoidGVzdCIsImZsZXhpYmxlRGVsaXZlcnlPcHRpb25zIjpbXX0";
+
+    static String canliAlicikey2 = "e3e1601fca9c429344c15527cd542142";
+    static String canliAlicikey1 = "a27c6fac85ae1295535e42c9d3e3f305";
+    static String canliAlicivalue2 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NDA5MDgxMzYsImV4cCI6MTY3MjAxMjEzNiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoiY2FubGlfYWxpY2lAbWFpbHNhYy5jb20iLCJpZCI6MjI2LCJmaXJzdE5hbWUiOiJhbGljaSB0ZXN0IGNhbmxpIiwicGljdHVyZSI6bnVsbCwiZ29vZ2xlSWQiOm51bGwsImZhY2Vib29rSWQiOm51bGwsImxpbmtlZGluSWQiOm51bGwsImdpdGh1YklkIjpudWxsLCJhcHBsZUlkIjpudWxsLCJpc1ZlcmlmaWVkIjpmYWxzZSwicGhvbmUiOm51bGwsImNyZWF0ZWQiOnsiZGF0ZSI6IjIwMjEtMTItMDcgMTA6MzI6MTguMDAwMDAwIiwidGltZXpvbmVfdHlwZSI6MywidGltZXpvbmUiOiJVVEMifSwicGF5cGFsQWNjb3VudElkIjpudWxsLCJsYXQiOjU0Ljk3MzkwNzEsImxuZyI6LTEuNjU3OTkwNSwiYnJvd3Nlck5vdGlmaWNhdGlvbnMiOmZhbHNlLCJhbGxvd0Fub255bW91c0NoYXQiOnRydWUsInppcENvZGUiOm51bGwsImRlbGl2ZXJ5VHlwZSI6WyJCVVlFUl9QSUNLVVAiXSwibWF4RGVsaXZlcnlSYW5nZSI6MCwiZnJlZURlbGl2ZXJ5UmFuZ2UiOjAsIm1pbkZyZWVEZWxpdmVyeU9yZGVyIjowLCJwZXJNaWxlQ29zdCI6MCwiYXZhaWxhYmlsaXR5IjoiMDg6MDAtMTc6MDAiLCJlc3RpbWF0ZWREZWxpdmVyeVRpbWUiOltdLCJhdmFpbGFiaWxpdHlCcmFuY2giOiIiLCJtaWRkbGVOYW1lIjoiIiwibGFzdE5hbWUiOiJ0ZXN0IiwiZmxleGlibGVEZWxpdmVyeU9wdGlvbnMiOltdfQ.T-CTGok8VG_TLjr0CglcoR6FJqmRACScxyPwcYqBhaO_2wpUdLVzywZIt5F1DZSgvWaK0SJyEBrtcx-yDNXX_htRGhLYZw-gVAW7s8HAUXEN5x06RMhOZ3minU29y3v5G-kz-QaNuMdBWcwZ6fRdOZjLX88YbCCkvJyfiRRfBvD2FfQVd0VVj66n1Lznu64gdbok3KvzwNYOM5iMu8SXaOwgO6RMFESWq8mjUwyue2D55ROchEFMK4dqObrUfhBT25WltAzPmmxiIpwba2uYbi83yYPj7c2OkCNS0DWQU7uHl3UGADjFTac9qI1bFscDeTrF6Ua6I6ZWhMXfYVjpEQ";
+    static String canliAlicivalue1 = "eyJpYXQiOjE2NDA5MDgxMzYsImV4cCI6MTY3MjAxMjEzNiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoiY2FubGlfYWxpY2lAbWFpbHNhYy5jb20iLCJpZCI6MjI2LCJmaXJzdE5hbWUiOiJhbGljaSB0ZXN0IGNhbmxpIiwicGljdHVyZSI6bnVsbCwiZ29vZ2xlSWQiOm51bGwsImZhY2Vib29rSWQiOm51bGwsImxpbmtlZGluSWQiOm51bGwsImdpdGh1YklkIjpudWxsLCJhcHBsZUlkIjpudWxsLCJpc1ZlcmlmaWVkIjpmYWxzZSwicGhvbmUiOm51bGwsImNyZWF0ZWQiOnsiZGF0ZSI6IjIwMjEtMTItMDcgMTA6MzI6MTguMDAwMDAwIiwidGltZXpvbmVfdHlwZSI6MywidGltZXpvbmUiOiJVVEMifSwicGF5cGFsQWNjb3VudElkIjpudWxsLCJsYXQiOjU0Ljk3MzkwNzEsImxuZyI6LTEuNjU3OTkwNSwiYnJvd3Nlck5vdGlmaWNhdGlvbnMiOmZhbHNlLCJhbGxvd0Fub255bW91c0NoYXQiOnRydWUsInppcENvZGUiOm51bGwsImRlbGl2ZXJ5VHlwZSI6WyJCVVlFUl9QSUNLVVAiXSwibWF4RGVsaXZlcnlSYW5nZSI6MCwiZnJlZURlbGl2ZXJ5UmFuZ2UiOjAsIm1pbkZyZWVEZWxpdmVyeU9yZGVyIjowLCJwZXJNaWxlQ29zdCI6MCwiYXZhaWxhYmlsaXR5IjoiMDg6MDAtMTc6MDAiLCJlc3RpbWF0ZWREZWxpdmVyeVRpbWUiOltdLCJhdmFpbGFiaWxpdHlCcmFuY2giOiIiLCJtaWRkbGVOYW1lIjoiIiwibGFzdE5hbWUiOiJ0ZXN0IiwiZmxleGlibGVEZWxpdmVyeU9wdGlvbnMiOltdfQ";
+
+    static String buyerTestKey2="e3e1601fca9c429344c15527cd542142";
+    static String buyerTestKey1="a27c6fac85ae1295535e42c9d3e3f305";
+    static String buyerTestValue2="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NTIyMDYwNTIsImV4cCI6MTY4MzMxMDA1Miwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoiYnV5ZXIudGVzdEBtYWlsc2FjLmNvbSIsImlkIjozMDQsImZpcnN0TmFtZSI6IlRlc3QiLCJwaWN0dXJlIjpudWxsLCJnb29nbGVJZCI6bnVsbCwiZmFjZWJvb2tJZCI6bnVsbCwibGlua2VkaW5JZCI6bnVsbCwiZ2l0aHViSWQiOm51bGwsImFwcGxlSWQiOm51bGwsImlzVmVyaWZpZWQiOmZhbHNlLCJwaG9uZSI6bnVsbCwiY3JlYXRlZCI6eyJkYXRlIjoiMjAyMi0wNS0xMCAxNzo1ODozMy4wMDAwMDAiLCJ0aW1lem9uZV90eXBlIjozLCJ0aW1lem9uZSI6IlVUQyJ9LCJwYXlwYWxBY2NvdW50SWQiOm51bGwsImxhdCI6bnVsbCwibG5nIjpudWxsLCJicm93c2VyTm90aWZpY2F0aW9ucyI6ZmFsc2UsImFsbG93QW5vbnltb3VzQ2hhdCI6dHJ1ZSwiemlwQ29kZSI6Ijk1MTA5IiwiZGVsaXZlcnlUeXBlIjpbXSwibWF4RGVsaXZlcnlSYW5nZSI6MCwiZnJlZURlbGl2ZXJ5UmFuZ2UiOjAsIm1pbkZyZWVEZWxpdmVyeU9yZGVyIjowLCJwZXJNaWxlQ29zdCI6MCwiYXZhaWxhYmlsaXR5IjpudWxsLCJlc3RpbWF0ZWREZWxpdmVyeVRpbWUiOltdLCJhdmFpbGFiaWxpdHlCcmFuY2giOm51bGwsIm1pZGRsZU5hbWUiOiIiLCJsYXN0TmFtZSI6IkJ1eWVyIiwiZmxleGlibGVEZWxpdmVyeU9wdGlvbnMiOltdfQ.T_vI7338lybA-rA-flYcMmZ1udPdWJLnOkOPy5nwPBrtsWUNxgGsXR-umItTbRY9W8KNworIeJTHzZqUVzCyHRCRbiWnGaazeFReyCgFfXM6AY8lQPpMKw4ruqEIKx93Fsv1BWvhMEkFhFuqGDltJaKpEGuHGAjo-rTX-WFis0IsrYg1xbQJeT2HKb-MoCGTbApaSQDFBe0gKQAECNVZsYI4eF8eY_FgVFBN0JYAU6Bn_8CpjnO0GyYjDWq24bFjHhyxhwaNqqCpn0-lTM8wI6U7AcTYEI_unGlUxxE9ivRel_CjfF3i3Eek4UFqtpxtNNkdUcX_l21-539SysasMg";
+    static String buyerTestValue1="eyJpYXQiOjE2NTIyMDYwNTIsImV4cCI6MTY4MzMxMDA1Miwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoiYnV5ZXIudGVzdEBtYWlsc2FjLmNvbSIsImlkIjozMDQsImZpcnN0TmFtZSI6IlRlc3QiLCJwaWN0dXJlIjpudWxsLCJnb29nbGVJZCI6bnVsbCwiZmFjZWJvb2tJZCI6bnVsbCwibGlua2VkaW5JZCI6bnVsbCwiZ2l0aHViSWQiOm51bGwsImFwcGxlSWQiOm51bGwsImlzVmVyaWZpZWQiOmZhbHNlLCJwaG9uZSI6bnVsbCwiY3JlYXRlZCI6eyJkYXRlIjoiMjAyMi0wNS0xMCAxNzo1ODozMy4wMDAwMDAiLCJ0aW1lem9uZV90eXBlIjozLCJ0aW1lem9uZSI6IlVUQyJ9LCJwYXlwYWxBY2NvdW50SWQiOm51bGwsImxhdCI6bnVsbCwibG5nIjpudWxsLCJicm93c2VyTm90aWZpY2F0aW9ucyI6ZmFsc2UsImFsbG93QW5vbnltb3VzQ2hhdCI6dHJ1ZSwiemlwQ29kZSI6Ijk1MTA5IiwiZGVsaXZlcnlUeXBlIjpbXSwibWF4RGVsaXZlcnlSYW5nZSI6MCwiZnJlZURlbGl2ZXJ5UmFuZ2UiOjAsIm1pbkZyZWVEZWxpdmVyeU9yZGVyIjowLCJwZXJNaWxlQ29zdCI6MCwiYXZhaWxhYmlsaXR5IjpudWxsLCJlc3RpbWF0ZWREZWxpdmVyeVRpbWUiOltdLCJhdmFpbGFiaWxpdHlCcmFuY2giOm51bGwsIm1pZGRsZU5hbWUiOiIiLCJsYXN0TmFtZSI6IkJ1eWVyIiwiZmxleGlibGVEZWxpdmVyeU9wdGlvbnMiOltdfQ";
+
+    static String sellerTestKey2="e3e1601fca9c429344c15527cd542142";
+    static String sellerTestKey1="a27c6fac85ae1295535e42c9d3e3f305";
+    static String sellerTestValue2="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NTIyMDYxMjcsImV4cCI6MTY4MzMxMDEyNywicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoic2VsbGVyQG1haWxzYWMuY29tIiwiaWQiOjMwNSwiZmlyc3ROYW1lIjoiVGVzdCIsInBpY3R1cmUiOm51bGwsImdvb2dsZUlkIjpudWxsLCJmYWNlYm9va0lkIjpudWxsLCJsaW5rZWRpbklkIjpudWxsLCJnaXRodWJJZCI6bnVsbCwiYXBwbGVJZCI6bnVsbCwiaXNWZXJpZmllZCI6ZmFsc2UsInBob25lIjpudWxsLCJjcmVhdGVkIjp7ImRhdGUiOiIyMDIyLTA1LTEwIDE3OjU5OjQ0LjAwMDAwMCIsInRpbWV6b25lX3R5cGUiOjMsInRpbWV6b25lIjoiVVRDIn0sInBheXBhbEFjY291bnRJZCI6bnVsbCwibGF0IjpudWxsLCJsbmciOm51bGwsImJyb3dzZXJOb3RpZmljYXRpb25zIjpmYWxzZSwiYWxsb3dBbm9ueW1vdXNDaGF0Ijp0cnVlLCJ6aXBDb2RlIjoiOTUxMDkiLCJkZWxpdmVyeVR5cGUiOltdLCJtYXhEZWxpdmVyeVJhbmdlIjowLCJmcmVlRGVsaXZlcnlSYW5nZSI6MCwibWluRnJlZURlbGl2ZXJ5T3JkZXIiOjAsInBlck1pbGVDb3N0IjowLCJhdmFpbGFiaWxpdHkiOm51bGwsImVzdGltYXRlZERlbGl2ZXJ5VGltZSI6W10sImF2YWlsYWJpbGl0eUJyYW5jaCI6bnVsbCwibWlkZGxlTmFtZSI6IiIsImxhc3ROYW1lIjoiU2VsbGVyIiwiZmxleGlibGVEZWxpdmVyeU9wdGlvbnMiOltdfQ.U6JIM9iMEq9mXcO2IeRDaEnKp2i41Z4mWypXhb71qOLgK7bB5iwAfYJEvrDwA_m3yRB1iPI1tBn09YiX-MJ39vbgtfJ0mAAdo7PcSY9-h7NvrBAZh4gdW7Z2gkC9lDRx9fOc3a2M6ml440Ofis21r61RJIKn-pFAg4f4ovteB1iWACJJzr7eoSD_aNOJOrys-HVBs7wp19QbOCTcCnZR_XEfOCyDX--QmT7rtbGUzY2u8t0zUhqyhJ8kDXfOKGpzhC7nPMjme9EORCKWHYk92LntUskEQjF1PNMjiGzF5EgLq5aMWV4bfhGUrsups0Azb__-vqR7PdIeOgJeKAFMdg";
+    static String sellerTestValue1="eyJpYXQiOjE2NTIyMDYxMjcsImV4cCI6MTY4MzMxMDEyNywicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoic2VsbGVyQG1haWxzYWMuY29tIiwiaWQiOjMwNSwiZmlyc3ROYW1lIjoiVGVzdCIsInBpY3R1cmUiOm51bGwsImdvb2dsZUlkIjpudWxsLCJmYWNlYm9va0lkIjpudWxsLCJsaW5rZWRpbklkIjpudWxsLCJnaXRodWJJZCI6bnVsbCwiYXBwbGVJZCI6bnVsbCwiaXNWZXJpZmllZCI6ZmFsc2UsInBob25lIjpudWxsLCJjcmVhdGVkIjp7ImRhdGUiOiIyMDIyLTA1LTEwIDE3OjU5OjQ0LjAwMDAwMCIsInRpbWV6b25lX3R5cGUiOjMsInRpbWV6b25lIjoiVVRDIn0sInBheXBhbEFjY291bnRJZCI6bnVsbCwibGF0IjpudWxsLCJsbmciOm51bGwsImJyb3dzZXJOb3RpZmljYXRpb25zIjpmYWxzZSwiYWxsb3dBbm9ueW1vdXNDaGF0Ijp0cnVlLCJ6aXBDb2RlIjoiOTUxMDkiLCJkZWxpdmVyeVR5cGUiOltdLCJtYXhEZWxpdmVyeVJhbmdlIjowLCJmcmVlRGVsaXZlcnlSYW5nZSI6MCwibWluRnJlZURlbGl2ZXJ5T3JkZXIiOjAsInBlck1pbGVDb3N0IjowLCJhdmFpbGFiaWxpdHkiOm51bGwsImVzdGltYXRlZERlbGl2ZXJ5VGltZSI6W10sImF2YWlsYWJpbGl0eUJyYW5jaCI6bnVsbCwibWlkZGxlTmFtZSI6IiIsImxhc3ROYW1lIjoiU2VsbGVyIiwiZmxleGlibGVEZWxpdmVyeU9wdGlvbnMiOltdfQ";
+
+    static String aliciTestKey2="e3e1601fca9c429344c15527cd542142";
+    static String aliciTestKey1="a27c6fac85ae1295535e42c9d3e3f305";
+    static String aliciTestValue2="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NDE5MTE4NzEsImV4cCI6MTY3MzAxNTg3MSwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9TRUxMRVIiXSwiZW1haWwiOiJhbGljaV90ZXN0XzIwMjJAbWFpbHNhYy5jb20iLCJpZCI6MTE1MCwiZmlyc3ROYW1lIjoiYWxpY2lUZXN0IiwicGljdHVyZSI6bnVsbCwiZ29vZ2xlSWQiOm51bGwsImZhY2Vib29rSWQiOm51bGwsImxpbmtlZGluSWQiOm51bGwsImdpdGh1YklkIjpudWxsLCJhcHBsZUlkIjpudWxsLCJpc1ZlcmlmaWVkIjpmYWxzZSwicGhvbmUiOm51bGwsImNyZWF0ZWQiOnsiZGF0ZSI6IjIwMjItMDEtMTAgMTI6Mzk6MjQuMDAwMDAwIiwidGltZXpvbmVfdHlwZSI6MywidGltZXpvbmUiOiJVVEMifSwicGF5cGFsQWNjb3VudElkIjpudWxsLCJsYXQiOjc2LjI1MDYsImxuZyI6MTAwLjExNCwiYnJvd3Nlck5vdGlmaWNhdGlvbnMiOmZhbHNlLCJhbGxvd0Fub255bW91c0NoYXQiOnRydWUsInppcENvZGUiOm51bGwsImRlbGl2ZXJ5VHlwZSI6WyJCVVlFUl9QSUNLVVBfRlJPTV9CUkFOQ0giXSwibWF4RGVsaXZlcnlSYW5nZSI6MCwiZnJlZURlbGl2ZXJ5UmFuZ2UiOjAsIm1pbkZyZWVEZWxpdmVyeU9yZGVyIjowLCJwZXJNaWxlQ29zdCI6MCwiYXZhaWxhYmlsaXR5IjoiIiwiZXN0aW1hdGVkRGVsaXZlcnlUaW1lIjpbXSwiYXZhaWxhYmlsaXR5QnJhbmNoIjoiMDg6MDAtMTc6MDAiLCJtaWRkbGVOYW1lIjoiIiwibGFzdE5hbWUiOiJhbGljaVRlc3QiLCJmbGV4aWJsZURlbGl2ZXJ5T3B0aW9ucyI6W119.d9DNQgo1b76H8isVc8vES-ypiZw5Unjr9J3cUYo9NBEG-fSzoTDO-geJKt7cUV1XfNiSarEJOrtJZyE0UbtgQpW5jciGHIdOEvJ072uAPaXc0Z74DSQK8otwEDJJYrBU0axgE7DY4_Ol6V5cgsLikLjC81Crx4CUg3cLW2foqS-iIL9NIoy-3ke0oZ7pBJbqwrYVAki_dDFClOcGuHv1yXPPAzRkC7YrcZN0sOdg-vXqF3uPp6plJhGT6sbNVlR53pGto84j2eXXdyEJwpzxdi9Sh6g9jDv0T1jpb-zdq4VN-0Tbqff-l_Qf6gCmIKjw7FWHuD9N7aKRIlIajBk93A";
+    static String aliciTestValue1="eyJpYXQiOjE2NDE5MTE4NzEsImV4cCI6MTY3MzAxNTg3MSwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9TRUxMRVIiXSwiZW1haWwiOiJhbGljaV90ZXN0XzIwMjJAbWFpbHNhYy5jb20iLCJpZCI6MTE1MCwiZmlyc3ROYW1lIjoiYWxpY2lUZXN0IiwicGljdHVyZSI6bnVsbCwiZ29vZ2xlSWQiOm51bGwsImZhY2Vib29rSWQiOm51bGwsImxpbmtlZGluSWQiOm51bGwsImdpdGh1YklkIjpudWxsLCJhcHBsZUlkIjpudWxsLCJpc1ZlcmlmaWVkIjpmYWxzZSwicGhvbmUiOm51bGwsImNyZWF0ZWQiOnsiZGF0ZSI6IjIwMjItMDEtMTAgMTI6Mzk6MjQuMDAwMDAwIiwidGltZXpvbmVfdHlwZSI6MywidGltZXpvbmUiOiJVVEMifSwicGF5cGFsQWNjb3VudElkIjpudWxsLCJsYXQiOjc2LjI1MDYsImxuZyI6MTAwLjExNCwiYnJvd3Nlck5vdGlmaWNhdGlvbnMiOmZhbHNlLCJhbGxvd0Fub255bW91c0NoYXQiOnRydWUsInppcENvZGUiOm51bGwsImRlbGl2ZXJ5VHlwZSI6WyJCVVlFUl9QSUNLVVBfRlJPTV9CUkFOQ0giXSwibWF4RGVsaXZlcnlSYW5nZSI6MCwiZnJlZURlbGl2ZXJ5UmFuZ2UiOjAsIm1pbkZyZWVEZWxpdmVyeU9yZGVyIjowLCJwZXJNaWxlQ29zdCI6MCwiYXZhaWxhYmlsaXR5IjoiIiwiZXN0aW1hdGVkRGVsaXZlcnlUaW1lIjpbXSwiYXZhaWxhYmlsaXR5QnJhbmNoIjoiMDg6MDAtMTc6MDAiLCJtaWRkbGVOYW1lIjoiIiwibGFzdE5hbWUiOiJhbGljaVRlc3QiLCJmbGV4aWJsZURlbGl2ZXJ5T3B0aW9ucyI6W119";
+
+    static String saticiTestKey2="e3e1601fca9c429344c15527cd542142";
+    static String saticiTestKey1="a27c6fac85ae1295535e42c9d3e3f305";
+    static String saticiTestValue2="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NDI5ODAyNjYsImV4cCI6MTY3NDA4NDI2Niwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9TRUxMRVIiXSwiZW1haWwiOiJzYXRpY2lfdGVzdF8yMDIyQG1haWxzYWMuY29tIiwiaWQiOjExNTEsImZpcnN0TmFtZSI6InNhdGljaVRlc3QiLCJwaWN0dXJlIjpudWxsLCJnb29nbGVJZCI6bnVsbCwiZmFjZWJvb2tJZCI6bnVsbCwibGlua2VkaW5JZCI6bnVsbCwiZ2l0aHViSWQiOm51bGwsImFwcGxlSWQiOm51bGwsImlzVmVyaWZpZWQiOmZhbHNlLCJwaG9uZSI6bnVsbCwiY3JlYXRlZCI6eyJkYXRlIjoiMjAyMi0wMS0xMCAxMjo0MTo0NS4wMDAwMDAiLCJ0aW1lem9uZV90eXBlIjozLCJ0aW1lem9uZSI6IlVUQyJ9LCJwYXlwYWxBY2NvdW50SWQiOm51bGwsImxhdCI6NzYuMjUwNiwibG5nIjoxMDAuMTE0LCJicm93c2VyTm90aWZpY2F0aW9ucyI6ZmFsc2UsImFsbG93QW5vbnltb3VzQ2hhdCI6dHJ1ZSwiemlwQ29kZSI6bnVsbCwiZGVsaXZlcnlUeXBlIjpbIkJVWUVSX1BJQ0tVUF9GUk9NX0JSQU5DSCJdLCJtYXhEZWxpdmVyeVJhbmdlIjowLCJmcmVlRGVsaXZlcnlSYW5nZSI6MCwibWluRnJlZURlbGl2ZXJ5T3JkZXIiOjAsInBlck1pbGVDb3N0IjowLCJhdmFpbGFiaWxpdHkiOiIiLCJlc3RpbWF0ZWREZWxpdmVyeVRpbWUiOltdLCJhdmFpbGFiaWxpdHlCcmFuY2giOiIwODowMC0xNzowMCIsIm1pZGRsZU5hbWUiOiIiLCJsYXN0TmFtZSI6InNhdGljaVRlc3QiLCJmbGV4aWJsZURlbGl2ZXJ5T3B0aW9ucyI6W119.PAmUU92FdQuVaSyUBIPe0MS54BPrfmSGrWj6JncnVQO1US6IiAk59zfMjuVerd9m2yfvewYOfjo5X6l-i4wnT_W9WR_h2HVpg4e48X4iTNS_w3zE-I9zz0N3eIN8dtefnQ2nQC1qXzh1fjNoZnpsVlsg0ifB1JxgfZ4DjPCOD1dTn2rvRIOqPup3elKJJ7xyRLarz-xPsbBZDk2vhNf9F0zfg5QTqFQM0FowCDwOXsRpD7_J-gGAlInoTJdt1zB7mp5RLbodRuRrLxi4OY8rK3INqynp5RaoWsK1ZISxmb1Ldn8HRBgtXKpywR_40EGlZttthJF4My1U-d68JeBdlQ";
+    static String saticiTestValue1="eyJpYXQiOjE2NDI5ODAyNjYsImV4cCI6MTY3NDA4NDI2Niwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9TRUxMRVIiXSwiZW1haWwiOiJzYXRpY2lfdGVzdF8yMDIyQG1haWxzYWMuY29tIiwiaWQiOjExNTEsImZpcnN0TmFtZSI6InNhdGljaVRlc3QiLCJwaWN0dXJlIjpudWxsLCJnb29nbGVJZCI6bnVsbCwiZmFjZWJvb2tJZCI6bnVsbCwibGlua2VkaW5JZCI6bnVsbCwiZ2l0aHViSWQiOm51bGwsImFwcGxlSWQiOm51bGwsImlzVmVyaWZpZWQiOmZhbHNlLCJwaG9uZSI6bnVsbCwiY3JlYXRlZCI6eyJkYXRlIjoiMjAyMi0wMS0xMCAxMjo0MTo0NS4wMDAwMDAiLCJ0aW1lem9uZV90eXBlIjozLCJ0aW1lem9uZSI6IlVUQyJ9LCJwYXlwYWxBY2NvdW50SWQiOm51bGwsImxhdCI6NzYuMjUwNiwibG5nIjoxMDAuMTE0LCJicm93c2VyTm90aWZpY2F0aW9ucyI6ZmFsc2UsImFsbG93QW5vbnltb3VzQ2hhdCI6dHJ1ZSwiemlwQ29kZSI6bnVsbCwiZGVsaXZlcnlUeXBlIjpbIkJVWUVSX1BJQ0tVUF9GUk9NX0JSQU5DSCJdLCJtYXhEZWxpdmVyeVJhbmdlIjowLCJmcmVlRGVsaXZlcnlSYW5nZSI6MCwibWluRnJlZURlbGl2ZXJ5T3JkZXIiOjAsInBlck1pbGVDb3N0IjowLCJhdmFpbGFiaWxpdHkiOiIiLCJlc3RpbWF0ZWREZWxpdmVyeVRpbWUiOltdLCJhdmFpbGFiaWxpdHlCcmFuY2giOiIwODowMC0xNzowMCIsIm1pZGRsZU5hbWUiOiIiLCJsYXN0TmFtZSI6InNhdGljaVRlc3QiLCJmbGV4aWJsZURlbGl2ZXJ5T3B0aW9ucyI6W119";
+
+    static String Mayninekey1 = "a27c6fac85ae1295535e42c9d3e3f305";
+    static String Mayninekey2 = "e3e1601fca9c429344c15527cd542142";
+    static String Mayninevalue1 ="eyJpYXQiOjE2NTIxNzUxNDQsImV4cCI6MTY4MzI3OTE0NCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoibWF5bmluZUBnbWFpbC5jb20iLCJpZCI6MjQ2LCJmaXJzdE5hbWUiOiJtYXluaW5lIiwicGljdHVyZSI6bnVsbCwiZ29vZ2xlSWQiOm51bGwsImZhY2Vib29rSWQiOm51bGwsImxpbmtlZGluSWQiOm51bGwsImdpdGh1YklkIjpudWxsLCJhcHBsZUlkIjpudWxsLCJpc1ZlcmlmaWVkIjpmYWxzZSwicGhvbmUiOm51bGwsImNyZWF0ZWQiOnsiZGF0ZSI6IjIwMjItMDUtMDkgMTc6MTA6NTguMDAwMDAwIiwidGltZXpvbmVfdHlwZSI6MywidGltZXpvbmUiOiJVVEMifSwicGF5cGFsQWNjb3VudElkIjpudWxsLCJsYXQiOjU0LjY3NDkzMzIsImxuZyI6LTEuMjIwNzE0MiwiYnJvd3Nlck5vdGlmaWNhdGlvbnMiOmZhbHNlLCJhbGxvd0Fub255bW91c0NoYXQiOnRydWUsInppcENvZGUiOm51bGwsImRlbGl2ZXJ5VHlwZSI6WyJCVVlFUl9QSUNLVVBfRlJPTV9CUkFOQ0giLCJCVVlFUl9QSUNLVVAiLCJTRUxMRVJfREVMSVZFUlkiLCJTRUxMRVJfRkxFWElCTEUiXSwibWF4RGVsaXZlcnlSYW5nZSI6MTAsImZyZWVEZWxpdmVyeVJhbmdlIjoyLCJtaW5GcmVlRGVsaXZlcnlPcmRlciI6MjAsInBlck1pbGVDb3N0IjowLjI1LCJhdmFpbGFiaWxpdHkiOiIwODowMC0xNzowMCIsImVzdGltYXRlZERlbGl2ZXJ5VGltZSI6WyI2MF81Il0sImF2YWlsYWJpbGl0eUJyYW5jaCI6IjA4OjAwLTE3OjAwIiwibWlkZGxlTmFtZSI6IiIsImxhc3ROYW1lIjoibWF5bmluZSIsImZsZXhpYmxlRGVsaXZlcnlPcHRpb25zIjpbeyJkZWxpdmVyeUJ5IjoxMTUxOSwib3JkZXJCZWdpbiI6MTQ0MCwib3JkZXJFbmQiOjU3NTl9XSwiaXNMb2FkZWQiOnRydWV9";
+    static String Mayninevalue2 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NTIxNzUxNDQsImV4cCI6MTY4MzI3OTE0NCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoibWF5bmluZUBnbWFpbC5jb20iLCJpZCI6MjQ2LCJmaXJzdE5hbWUiOiJtYXluaW5lIiwicGljdHVyZSI6bnVsbCwiZ29vZ2xlSWQiOm51bGwsImZhY2Vib29rSWQiOm51bGwsImxpbmtlZGluSWQiOm51bGwsImdpdGh1YklkIjpudWxsLCJhcHBsZUlkIjpudWxsLCJpc1ZlcmlmaWVkIjpmYWxzZSwicGhvbmUiOm51bGwsImNyZWF0ZWQiOnsiZGF0ZSI6IjIwMjItMDUtMDkgMTc6MTA6NTguMDAwMDAwIiwidGltZXpvbmVfdHlwZSI6MywidGltZXpvbmUiOiJVVEMifSwicGF5cGFsQWNjb3VudElkIjpudWxsLCJsYXQiOjU0LjY3NDkzMzIsImxuZyI6LTEuMjIwNzE0MiwiYnJvd3Nlck5vdGlmaWNhdGlvbnMiOmZhbHNlLCJhbGxvd0Fub255bW91c0NoYXQiOnRydWUsInppcENvZGUiOm51bGwsImRlbGl2ZXJ5VHlwZSI6WyJCVVlFUl9QSUNLVVBfRlJPTV9CUkFOQ0giLCJCVVlFUl9QSUNLVVAiLCJTRUxMRVJfREVMSVZFUlkiLCJTRUxMRVJfRkxFWElCTEUiXSwibWF4RGVsaXZlcnlSYW5nZSI6MTAsImZyZWVEZWxpdmVyeVJhbmdlIjoyLCJtaW5GcmVlRGVsaXZlcnlPcmRlciI6MjAsInBlck1pbGVDb3N0IjowLjI1LCJhdmFpbGFiaWxpdHkiOiIwODowMC0xNzowMCIsImVzdGltYXRlZERlbGl2ZXJ5VGltZSI6WyI2MF81Il0sImF2YWlsYWJpbGl0eUJyYW5jaCI6IjA4OjAwLTE3OjAwIiwibWlkZGxlTmFtZSI6IiIsImxhc3ROYW1lIjoibWF5bmluZSIsImZsZXhpYmxlRGVsaXZlcnlPcHRpb25zIjpbeyJpZCI6MTcwLCJkZWxpdmVyeUJ5IjoxMTUxOSwib3JkZXJCZWdpbiI6MTQ0MCwib3JkZXJFbmQiOjU3NTl9XX0.BOSS45xpcjGKDc2AHDDJJuHAJr9fxCpvFFEMeN-NkTofJ3UQIf9FwvhZ8tPwAKTJs12uQD560O7RYJxAWxDh7UOdz5yvoqyg_BL_k9hm_optPzPvXRXLmyG_PzxIOqqqZagUY6F4NJmRnY4ygA5JRgWBWlm-K7MaKVP9MObNqnMLPVflvCwBfeeKZZYMWyN7thxWxX_K0UcrULHsbzvkRx2f6DOis0cC0wW7xlR-ODQ4hK-YRUD1MQ5yvMXSOFMwf4k409xL8yAYhRYGa9bm-_hYggFnUgVxPJwwvPa0sH_x4a3_4GT8r5bvwxgJtYcn0EvphzyfYnGDg_mII4z2Dw";
+
+    static String weeklyordeskipkey1 = "a27c6fac85ae1295535e42c9d3e3f305";
+    static String weeklyordeskipkey2 = "e3e1601fca9c429344c15527cd542142";
+    static String weeklyordeskipvalue1 ="eyJpYXQiOjE2NDQyMjI1MjUsImV4cCI6MTY3NTMyNjUyNSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoid29za2lweWVkaXN1YmF0QGdtYWlsLmNvbSIsImlkIjoxMjM4LCJmaXJzdE5hbWUiOiJ3b3NraXB5ZWRpc3ViYXQiLCJwaWN0dXJlIjpudWxsLCJnb29nbGVJZCI6bnVsbCwiZmFjZWJvb2tJZCI6bnVsbCwibGlua2VkaW5JZCI6bnVsbCwiZ2l0aHViSWQiOm51bGwsImFwcGxlSWQiOm51bGwsImlzVmVyaWZpZWQiOmZhbHNlLCJwaG9uZSI6bnVsbCwiY3JlYXRlZCI6eyJkYXRlIjoiMjAyMi0wMi0wNyAwODoyODo0My4wMDAwMDAiLCJ0aW1lem9uZV90eXBlIjozLCJ0aW1lem9uZSI6IlVUQyJ9LCJwYXlwYWxBY2NvdW50SWQiOm51bGwsImxhdCI6bnVsbCwibG5nIjpudWxsLCJicm93c2VyTm90aWZpY2F0aW9ucyI6ZmFsc2UsImFsbG93QW5vbnltb3VzQ2hhdCI6dHJ1ZSwiemlwQ29kZSI6bnVsbCwiZGVsaXZlcnlUeXBlIjpbXSwibWF4RGVsaXZlcnlSYW5nZSI6MCwiZnJlZURlbGl2ZXJ5UmFuZ2UiOjAsIm1pbkZyZWVEZWxpdmVyeU9yZGVyIjowLCJwZXJNaWxlQ29zdCI6MCwiYXZhaWxhYmlsaXR5IjpudWxsLCJlc3RpbWF0ZWREZWxpdmVyeVRpbWUiOltdLCJhdmFpbGFiaWxpdHlCcmFuY2giOm51bGwsIm1pZGRsZU5hbWUiOiIiLCJsYXN0TmFtZSI6Indvc2tpcHllZGlzdWJhdCIsImZsZXhpYmxlRGVsaXZlcnlPcHRpb25zIjpbXX0";
+    static String weeklyordeskipvalue2 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NDQyMjI1MjUsImV4cCI6MTY3NTMyNjUyNSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoid29za2lweWVkaXN1YmF0QGdtYWlsLmNvbSIsImlkIjoxMjM4LCJmaXJzdE5hbWUiOiJ3b3NraXB5ZWRpc3ViYXQiLCJwaWN0dXJlIjpudWxsLCJnb29nbGVJZCI6bnVsbCwiZmFjZWJvb2tJZCI6bnVsbCwibGlua2VkaW5JZCI6bnVsbCwiZ2l0aHViSWQiOm51bGwsImFwcGxlSWQiOm51bGwsImlzVmVyaWZpZWQiOmZhbHNlLCJwaG9uZSI6bnVsbCwiY3JlYXRlZCI6eyJkYXRlIjoiMjAyMi0wMi0wNyAwODoyODo0My4wMDAwMDAiLCJ0aW1lem9uZV90eXBlIjozLCJ0aW1lem9uZSI6IlVUQyJ9LCJwYXlwYWxBY2NvdW50SWQiOm51bGwsImxhdCI6bnVsbCwibG5nIjpudWxsLCJicm93c2VyTm90aWZpY2F0aW9ucyI6ZmFsc2UsImFsbG93QW5vbnltb3VzQ2hhdCI6dHJ1ZSwiemlwQ29kZSI6bnVsbCwiZGVsaXZlcnlUeXBlIjpbXSwibWF4RGVsaXZlcnlSYW5nZSI6MCwiZnJlZURlbGl2ZXJ5UmFuZ2UiOjAsIm1pbkZyZWVEZWxpdmVyeU9yZGVyIjowLCJwZXJNaWxlQ29zdCI6MCwiYXZhaWxhYmlsaXR5IjpudWxsLCJlc3RpbWF0ZWREZWxpdmVyeVRpbWUiOltdLCJhdmFpbGFiaWxpdHlCcmFuY2giOm51bGwsIm1pZGRsZU5hbWUiOiIiLCJsYXN0TmFtZSI6Indvc2tpcHllZGlzdWJhdCIsImZsZXhpYmxlRGVsaXZlcnlPcHRpb25zIjpbXX0.CMypdSkKU2J1xmg25MhZvoHtIVb_2VNL_KsEWG7t1pLrcUQ09EhUYP_PoSl0fM4q8_PyQhUx2S69YcRXeQcPfiqQezrrCP1Fu9Xb8dvriejmHnmuc_rORE86vVY5JzfRYPseZrnzShYtF7eDkRvVMujrRln6Zk0qK3edtwDWJbFu3KA4TEVQt_2HZySpLdhCABp1VV6WIZbUd7MmIrgXEX7v35a90HPBvNxKh8g2Nn9cfWzsnMUuiMpS5CCulkFU-UPeJeRN-Q4rWRIfnzhUUOr4yjaekXRUT7QmhcFDlzplz2Os3UThZaBWioK88foQaO34D943LWpSRWFZ-Gl47w";
+
+    //value2 tokeni veriyor. Tokendaki noktalarin arasindaki bolum value1 i veriyor. Value1 Split yontemi ile elde edildi.
+//    static String   newUserkey1 = "a27c6fac85ae1295535e42c9d3e3f305";
+//    static String   newUserkey2 = "e3e1601fca9c429344c15527cd542142";
+//    static String   newUservalue2 = ReusableMethods.createUserApi_password_Urbanic34(true,true).get("token");
+//    static String   newUservalue1 =newUservalue2.split("\\.")[1];
+
+    static String Apoloniakey1 = "a27c6fac85ae1295535e42c9d3e3f305";
+    static String Apoloniakey2 = "e3e1601fca9c429344c15527cd542142";
+    static String Apoloniavalue1 ="eyJpYXQiOjE2NTMxMjQ1NDUsImV4cCI6MTY4NDIyODU0NSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoiZWR3YXJkby5rdXBoYWxAZ21haWwuY29tIiwiaWQiOjczOSwiZmlyc3ROYW1lIjoiQXBvbG9uaWEiLCJwaWN0dXJlIjpudWxsLCJnb29nbGVJZCI6bnVsbCwiZmFjZWJvb2tJZCI6bnVsbCwibGlua2VkaW5JZCI6bnVsbCwiZ2l0aHViSWQiOm51bGwsImFwcGxlSWQiOm51bGwsImlzVmVyaWZpZWQiOmZhbHNlLCJwaG9uZSI6bnVsbCwiY3JlYXRlZCI6eyJkYXRlIjoiMjAyMi0wNS0yMSAwOToxNToxNC4wMDAwMDAiLCJ0aW1lem9uZV90eXBlIjozLCJ0aW1lem9uZSI6IlVUQyJ9LCJwYXlwYWxBY2NvdW50SWQiOm51bGwsImxhdCI6NDMuMDY1OCwibG5nIjotNzkuMDYzMywiYnJvd3Nlck5vdGlmaWNhdGlvbnMiOmZhbHNlLCJhbGxvd0Fub255bW91c0NoYXQiOnRydWUsInppcENvZGUiOiIxMjM0NSIsImRlbGl2ZXJ5VHlwZSI6W10sIm1heERlbGl2ZXJ5UmFuZ2UiOjAsImZyZWVEZWxpdmVyeVJhbmdlIjowLCJtaW5GcmVlRGVsaXZlcnlPcmRlciI6MCwicGVyTWlsZUNvc3QiOjAsImF2YWlsYWJpbGl0eSI6bnVsbCwiZXN0aW1hdGVkRGVsaXZlcnlUaW1lIjpbXSwiYXZhaWxhYmlsaXR5QnJhbmNoIjpudWxsLCJtaWRkbGVOYW1lIjoiU2hhbmRpIiwibGFzdE5hbWUiOiJIb3dlbGwiLCJmbGV4aWJsZURlbGl2ZXJ5T3B0aW9ucyI6W119";
+    static String Apoloniavalue2 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NTMxMjQ1NDUsImV4cCI6MTY4NDIyODU0NSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoiZWR3YXJkby5rdXBoYWxAZ21haWwuY29tIiwiaWQiOjczOSwiZmlyc3ROYW1lIjoiQXBvbG9uaWEiLCJwaWN0dXJlIjpudWxsLCJnb29nbGVJZCI6bnVsbCwiZmFjZWJvb2tJZCI6bnVsbCwibGlua2VkaW5JZCI6bnVsbCwiZ2l0aHViSWQiOm51bGwsImFwcGxlSWQiOm51bGwsImlzVmVyaWZpZWQiOmZhbHNlLCJwaG9uZSI6bnVsbCwiY3JlYXRlZCI6eyJkYXRlIjoiMjAyMi0wNS0yMSAwOToxNToxNC4wMDAwMDAiLCJ0aW1lem9uZV90eXBlIjozLCJ0aW1lem9uZSI6IlVUQyJ9LCJwYXlwYWxBY2NvdW50SWQiOm51bGwsImxhdCI6NDMuMDY1OCwibG5nIjotNzkuMDYzMywiYnJvd3Nlck5vdGlmaWNhdGlvbnMiOmZhbHNlLCJhbGxvd0Fub255bW91c0NoYXQiOnRydWUsInppcENvZGUiOiIxMjM0NSIsImRlbGl2ZXJ5VHlwZSI6W10sIm1heERlbGl2ZXJ5UmFuZ2UiOjAsImZyZWVEZWxpdmVyeVJhbmdlIjowLCJtaW5GcmVlRGVsaXZlcnlPcmRlciI6MCwicGVyTWlsZUNvc3QiOjAsImF2YWlsYWJpbGl0eSI6bnVsbCwiZXN0aW1hdGVkRGVsaXZlcnlUaW1lIjpbXSwiYXZhaWxhYmlsaXR5QnJhbmNoIjpudWxsLCJtaWRkbGVOYW1lIjoiU2hhbmRpIiwibGFzdE5hbWUiOiJIb3dlbGwiLCJmbGV4aWJsZURlbGl2ZXJ5T3B0aW9ucyI6W119.Jj_PlrNrgEUHcIrBg0moHt6W8RnF8siQodGVubN-6sQTlwTE9FgltnuatxmeGUm4_9qeHIrJXYyzv5rUJW5FlG0cBExvqtuUBBZ1NGzqiRWyuLIbd5WvruC6eXXjJ3PZsqYEhX_WBw6onMkMgIZ19jDCzX3zn7lQZzJ_LjfL71edPAa4hFv9ph4NEiZrMCOPe9SG3U4fU8FIZZmbCr7lLVib56hSMHLznDrmc_V77W79mXY9k3hQ3q9mE057hxEZrOI_i_BKgnFPhY7Ou-9b-qBcRojn01JVU4PiWCQuFLUMH6OFWJAV5N-JDtgGb1HrheQ5MZm1tZi422sm7X7tcA";
+
+    //user "newUser" olarak secilirse location ve product ekleyip yeni bir user olusturuyor.
+    //Bu method hizlica istene sayfaya login edilmis halde goturuyor.Ihtiyac halinde kullanilmsai icin tokeni donduruyor.
+    public static String fastLogin(String userName, String restOfUrl) {
+        String URL = "";
+        String key1 = "";
+        String key2 = "";
+        String value1 = "";
+        String value2 = "";
+
+        //System.out.println("userName = " + userName);
+
+//        if (userName.equalsIgnoreCase("newUser")) {
+//            URL = "https://test.urbanicfarm.com/";
+//            key1 = newUserkey1;
+//            key2 = newUserkey2;
+//            value1 = newUservalue1;
+//            value2 = newUservalue2;
+//            //System.out.println("value2 = " + value2);
+//           // return value2;
+//        }
+        if (userName.equalsIgnoreCase("Test Alici")) {
+            URL = "https://test.urbanicfarm.com/";
+            key1 = testAliciKey1;
+            key2 = testAlicikey2;
+            value1 = testAlicivalue1;
+            value2 = testAlicivalue2;
+        }
+        if (userName.equalsIgnoreCase("Test Satici")) {
+            URL = "https://test.urbanicfarm.com/";
+            key1 = testSaticikey1;
+            key2 = testSaticikey2;
+            value1 = testSaticivalue1;
+            value2 = testSaticivalue2;
+        }
+        if (userName.equalsIgnoreCase("Canli Alici")) {
+            URL = "https://urbanicfarm.com/";
+            key1 = canliAlicikey1;
+            key2 = canliAlicikey2;
+            value1 = canliAlicivalue1;
+            value2 = canliAlicivalue2;
+        }
+        if (userName.equalsIgnoreCase("Canli Satici")) {
+            URL = "https://urbanicfarm.com/";
+            key1 = canliSaticikey1;
+            key2 = canliSaticikey2;
+            value1 = canliSaticivalue1;
+            value2 = canliSaticivalue2;
+        }
+        if (userName.equalsIgnoreCase("Test Buyer")) {
+            URL = "https://test.urbanicfarm.com/";
+            key1 = buyerTestKey1;
+            key2 = buyerTestKey2;
+            value1 = buyerTestValue1;
+            value2 = buyerTestValue2;
+        }
+        if (userName.equalsIgnoreCase("Test Seller")) {
+            URL = "https://test.urbanicfarm.com/";
+            key1 = sellerTestKey1;
+            key2 = sellerTestKey2;
+            value1 = sellerTestValue1;
+            value2 = sellerTestValue2;
+
+        }
+        if (userName.equalsIgnoreCase("alici test")) {
+            URL = "https://test.urbanicfarm.com/";
+            key1 = aliciTestKey1;
+            key2 = aliciTestKey2;
+            value1 = aliciTestValue1;
+            value2 = aliciTestValue2;
+
+        }
+        if (userName.equalsIgnoreCase("satici test")) {
+            URL = "https://test.urbanicfarm.com/";
+            key1 = saticiTestKey1;
+            key2 = saticiTestKey2;
+            value1 = saticiTestValue1;
+            value2 = saticiTestValue2;
+
+        }
+        if (userName.equalsIgnoreCase("Maynine")) {
+            URL = "https://test.urbanicfarm.com/";
+            key1 = Mayninekey1;
+            key2 = Mayninekey2;
+            value1 = Mayninevalue1;
+            value2 = Mayninevalue2;
+
+        }  if (userName.equalsIgnoreCase("bunu sadece weekly order skip unskip icin kullanin")) {
+            URL = "https://test.urbanicfarm.com/";
+            key1 = weeklyordeskipkey1;
+            key2 = weeklyordeskipkey2;
+            value1 = weeklyordeskipvalue1;
+            value2 = weeklyordeskipvalue2;
+
+        }
+
+        if (userName.equalsIgnoreCase("Apolonia")) {
+            URL = "https://test.urbanicfarm.com/";
+            key1 = Apoloniakey1;
+            key2 = Apoloniakey2;
+            value1 = Apoloniavalue1;
+            value2 = Apoloniavalue2;
+
+        }
+        DriverFactoryImplementation.getInstance().getDriver().get(URL);
+        LocalStorage local = ((WebStorage) DriverFactoryImplementation.getInstance().getDriver()).getLocalStorage();
+       // LocalStorage local = ((WebStorage) DriverFactoryImplementation.getInstance().getDriver()).getSessionStorage()
+
+        local.setItem(key1, value1);
+        local.setItem(key2, value2);
+
+
+            WebDriverWait wait = new WebDriverWait(DriverFactoryImplementation.getInstance().getDriver(), 20);
+            boolean cevir = true;
+            while (cevir) {
+                try {
+                    DriverFactoryImplementation.getInstance().getDriver().get(URL + restOfUrl);
+                    DriverFactoryImplementation.getInstance().getDriver().navigate().refresh();
+                    cevir = false;
+                } catch (StaleElementReferenceException e) {
+                    cevir = true;
+                }
+            }
+            return  value2;
+    }
+
+    public static void ENUM_fastLogin(String environment, String token, String restOfUrl){
+        String URL = "https://test.urbanicfarm.com/";
+        if(environment.equalsIgnoreCase("Test")){
+                URL = "https://test.urbanicfarm.com/";
+        }else if(environment.equalsIgnoreCase("Canli")){
+            URL= "https://urbanicfarm.com/";
+        }
+
+        String key1 = "a27c6fac85ae1295535e42c9d3e3f305";
+        String key2 = "e3e1601fca9c429344c15527cd542142";
+        String value1 = token.split("\\.")[1];
+        String value2 = token;
+        DriverFactoryImplementation.getInstance().getDriver().get(URL);
+        LocalStorage local = ((WebStorage) DriverFactoryImplementation.getInstance().getDriver()).getLocalStorage();
+        // LocalStorage local = ((WebStorage) DriverFactoryImplementation.getInstance().getDriver()).getSessionStorage()
+
+        local.setItem(key1, value1);
+        local.setItem(key2, value2);
+
+
+        WebDriverWait wait = new WebDriverWait(DriverFactoryImplementation.getInstance().getDriver(), 20);
+        boolean cevir = true;
+        while (cevir) {
+            try {
+                DriverFactoryImplementation.getInstance().getDriver().get(URL + restOfUrl);
+                DriverFactoryImplementation.getInstance().getDriver().navigate().refresh();
+                cevir = false;
+            } catch (StaleElementReferenceException e) {
+                cevir = true;
+            }
+        }
+
+    }
+}

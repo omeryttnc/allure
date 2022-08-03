@@ -1,0 +1,48 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "Tests.UITests.interviewQuestions_1.BJSS",
+    "children" : [ {
+      "name" : "test1",
+      "uid" : "16141422fc7969fe",
+      "parentUid" : "b15c5330a613199536deb466f7ffa768",
+      "status" : "passed",
+      "time" : {
+        "start" : 1659534845246,
+        "stop" : 1659534867553,
+        "duration" : 22307
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test2",
+      "uid" : "9422d0fb6fef883c",
+      "parentUid" : "b15c5330a613199536deb466f7ffa768",
+      "status" : "passed",
+      "time" : {
+        "start" : 1659534867836,
+        "stop" : 1659534881787,
+        "duration" : 13951
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test3",
+      "uid" : "941e734f345e0f67",
+      "parentUid" : "b15c5330a613199536deb466f7ffa768",
+      "status" : "failed",
+      "time" : {
+        "start" : 1659534881804,
+        "stop" : 1659534902893,
+        "duration" : 21089
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "Tests.UITests.interviewQuestions_1.BJSS"
+  } ]
+}
