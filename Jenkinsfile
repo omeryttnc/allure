@@ -6,7 +6,7 @@ pipeline {
     }
 
       stages {
-        stage('Build') {
+        stage('omer branch calisti') {
             steps {
                  bat 'mvn clean test -P omer'
                 }
