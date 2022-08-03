@@ -86,6 +86,13 @@ public class BJSSTest {
     }
 
 
+    @Omer
+    @Test
+    void test5() {
+        Assertions.assertTrue(2==3);
+    }
+
+
     //    @Attachment(value = "Screenshot",type = "image/png")
 //    public byte[] screenshot(){
 //        return (((TakesScreenshot) chromeDriver).getScreenshotAs(OutputType.BYTES));
