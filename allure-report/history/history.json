@@ -1,5 +1,24 @@
 {
-  "538663ea1e5f3b15b7253d2c740ff9b7" : {
+  "b3edd8b4dfb8339d5384df721a1c723a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "33e61dc13ea396de",
+      "status" : "passed",
+      "time" : {
+        "start" : 1659559927713,
+        "stop" : 1659559932532,
+        "duration" : 4819
+      }
+    } ]
+  },
+  "5c3b4f83cc42598a1eb1411f355d6739" : {
     "statistic" : {
       "failed" : 1,
       "broken" : 0,
@@ -9,51 +28,13 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "941e734f345e0f67",
+      "uid" : "3f96adcf4262277f",
       "status" : "failed",
       "statusDetails" : "there is a problem with url expected to include \nbjss but it came as \nhttps://www.bjss.com/careers ==> expected: <true> but was: <false>",
       "time" : {
-        "start" : 1659534881804,
-        "stop" : 1659534902893,
-        "duration" : 21089
-      }
-    } ]
-  },
-  "dadd9f953f76fbff856d921e8f0d6710" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "16141422fc7969fe",
-      "status" : "passed",
-      "time" : {
-        "start" : 1659534845246,
-        "stop" : 1659534867553,
-        "duration" : 22307
-      }
-    } ]
-  },
-  "903d9f4aee579cf20005f9365dcd8ee4" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "9422d0fb6fef883c",
-      "status" : "passed",
-      "time" : {
-        "start" : 1659534867836,
-        "stop" : 1659534881787,
-        "duration" : 13951
+        "start" : 1659559968614,
+        "stop" : 1659559978826,
+        "duration" : 10212
       }
     } ]
   }

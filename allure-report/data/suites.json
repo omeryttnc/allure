@@ -2,47 +2,34 @@
   "uid" : "98d3104e051c652961429bf95fa0b5d6",
   "name" : "suites",
   "children" : [ {
-    "name" : "Tests.UITests.interviewQuestions_1.BJSS",
+    "name" : "Tests.UITests.interviewQuestions_1.BJSSTest",
     "children" : [ {
-      "name" : "test1()",
-      "uid" : "16141422fc7969fe",
-      "parentUid" : "8c883d1aecc866c38a27cf14f6382ea8",
+      "name" : "test4()",
+      "uid" : "33e61dc13ea396de",
+      "parentUid" : "600d767450de8136b230e42904a88aad",
       "status" : "passed",
       "time" : {
-        "start" : 1659534845246,
-        "stop" : 1659534867553,
-        "duration" : 22307
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ ]
-    }, {
-      "name" : "test2()",
-      "uid" : "9422d0fb6fef883c",
-      "parentUid" : "8c883d1aecc866c38a27cf14f6382ea8",
-      "status" : "passed",
-      "time" : {
-        "start" : 1659534867836,
-        "stop" : 1659534881787,
-        "duration" : 13951
+        "start" : 1659559927713,
+        "stop" : 1659559932532,
+        "duration" : 4819
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "test3()",
-      "uid" : "941e734f345e0f67",
-      "parentUid" : "8c883d1aecc866c38a27cf14f6382ea8",
+      "uid" : "3f96adcf4262277f",
+      "parentUid" : "600d767450de8136b230e42904a88aad",
       "status" : "failed",
       "time" : {
-        "start" : 1659534881804,
-        "stop" : 1659534902893,
-        "duration" : 21089
+        "start" : 1659559968614,
+        "stop" : 1659559978826,
+        "duration" : 10212
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     } ],
-    "uid" : "8c883d1aecc866c38a27cf14f6382ea8"
+    "uid" : "600d767450de8136b230e42904a88aad"
   } ]
 }

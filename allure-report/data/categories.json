@@ -7,13 +7,13 @@
       "name" : "there is a problem with url expected to include \nbjss but it came as \nhttps://www.bjss.com/careers ==> expected: <true> but was: <false>",
       "children" : [ {
         "name" : "test3()",
-        "uid" : "941e734f345e0f67",
+        "uid" : "3f96adcf4262277f",
         "parentUid" : "ae127e53c6d6972405355518449cb7f9",
         "status" : "failed",
         "time" : {
-          "start" : 1659534881804,
-          "stop" : 1659534902893,
-          "duration" : 21089
+          "start" : 1659559968614,
+          "stop" : 1659559978826,
+          "duration" : 10212
         },
         "flaky" : false,
         "newFailed" : false,

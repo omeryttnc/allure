@@ -23,7 +23,7 @@ pipeline {
                                         }
            stage('create allure report'){
            steps{
-emailext attachmentsPattern: '**/allure-report/index.html', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com,omeryttnc2@gmail.com'                }
+emailext attachmentsPattern: '**/allure-report.zip', body: 'rapor from allure', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com,omeryttnc2@gmail.com'                }
                                         }
 
             }
