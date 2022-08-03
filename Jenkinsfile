@@ -25,6 +25,6 @@ pipeline {
            steps{
 emailext attachmentsPattern: '**/allure-report/*', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
 
-}
+}}
             }
         }
