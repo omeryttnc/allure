@@ -16,14 +16,14 @@ pipeline {
 //                   bat '--clean allure generate'
 //                 }
 //                                         }
-//         stage('generate allure report'){
-//            steps{
-//            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
-//                 }
-//                                         }
+        stage('generate allure report'){
+           steps{
+           allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+                }
+                                        }
            stage('send report'){
            steps{
-emailext attachmentsPattern: '**/allure-report/*', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
+emailext attachmentsPattern: '**/allure-report.zip', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
 
 }}
             }
