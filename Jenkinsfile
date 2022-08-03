@@ -11,11 +11,11 @@ pipeline {
                  bat 'mvn clean test -P omer'
                 }
                         }
-//          stage('Create allure report'){
-//             steps{
-//                   bat 'allure generate --clean'
-//                 }
-//                                         }
+         stage('Create allure report'){
+            steps{
+                  bat 'allure generate --clean'
+                }
+                                        }
         stage('generate allure report'){
            steps{
            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
