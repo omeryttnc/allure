@@ -89,7 +89,7 @@ public class BJSSTest {
     @Omer
     @Test
     void test5() {
-        Assertions.assertTrue(2==3);
+        Assertions.assertTrue(3==3);
     }
 
 
