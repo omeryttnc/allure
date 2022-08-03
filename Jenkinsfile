@@ -23,7 +23,8 @@ pipeline {
 //                                         }
            stage('send report'){
            steps{
-emailext attachLog: true, attachmentsPattern: '\'**/allure-report\*'', body: '', compressLog: true, recipientProviders: [buildUser()], subject: 'email alolure', to: 'omeryttnc@gmail.com'                                        }
+emailext attachmentsPattern: '**/allure-report/*', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
+
 }
             }
         }
