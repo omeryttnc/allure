@@ -24,6 +24,6 @@ pipeline {
            stage('create allure report'){
            steps{
 emailext attachLog: true, attachmentsPattern: '\'**/allure-report.zip\'', body: '', compressLog: true, recipientProviders: [buildUser()], subject: 'email alolure', to: 'omeryttnc@gmail.com'                                        }
-
+}
             }
         }
