@@ -24,7 +24,7 @@ pipeline {
                                                 }
            stage('send report'){
            steps{
-emailext attachmentsPattern: '""allure-report.zip"', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
+emailext attachmentsPattern: '**/allure-report.zip', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
 
 }}
             }
