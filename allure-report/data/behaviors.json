@@ -3,7 +3,7 @@
   "name" : "behaviors",
   "children" : [ {
     "name" : "test4()",
-    "uid" : "33e61dc13ea396de",
+    "uid" : "e87814fe69524cbb",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
@@ -22,7 +22,7 @@
         "name" : "US_03",
         "children" : [ {
           "name" : "test3()",
-          "uid" : "3f96adcf4262277f",
+          "uid" : "f3048e37f046bacb",
           "parentUid" : "aa6e8fea0260060dbed5d881b30f64fa",
           "status" : "failed",
           "time" : {

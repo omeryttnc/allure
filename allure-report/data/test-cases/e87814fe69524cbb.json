@@ -1,5 +1,5 @@
 {
-  "uid" : "33e61dc13ea396de",
+  "uid" : "e87814fe69524cbb",
   "name" : "test4()",
   "fullName" : "Tests.UITests.interviewQuestions_1.BJSSTest.test4",
   "historyId" : "b3edd8b4dfb8339d5384df721a1c723a",
@@ -18,9 +18,9 @@
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ {
-      "uid" : "180d7a1cc260107",
+      "uid" : "50746cd340e17c16",
       "name" : "name for attachment",
-      "source" : "180d7a1cc260107.png",
+      "source" : "50746cd340e17c16.png",
       "type" : "image/png",
       "size" : 4828
     } ],
@@ -72,6 +72,6 @@
     "categories" : [ ],
     "tags" : [ "omer" ]
   },
-  "source" : "33e61dc13ea396de.json",
+  "source" : "e87814fe69524cbb.json",
   "parameterValues" : [ ]
 }

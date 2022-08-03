@@ -11,16 +11,16 @@ pipeline {
                  bat 'mvn clean test -P omer'
                 }
                         }
-//          stage('Create allure report'){
-//             steps{
-//                   bat '--clean allure generate'
-//                 }
-//                                         }
-        stage('generate allure report'){
-           steps{
-           allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+         stage('Create allure report'){
+            steps{
+                  bat 'allure generate --clean'
                 }
                                         }
+//         stage('generate allure report'){
+//            steps{
+//            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+//                 }
+//                                         }
            stage('send report'){
            steps{
 emailext attachmentsPattern: '**/allure-report.zip', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'

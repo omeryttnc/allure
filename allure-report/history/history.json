@@ -9,7 +9,7 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "33e61dc13ea396de",
+      "uid" : "e87814fe69524cbb",
       "status" : "passed",
       "time" : {
         "start" : 1659559927713,
@@ -28,7 +28,7 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "3f96adcf4262277f",
+      "uid" : "f3048e37f046bacb",
       "status" : "failed",
       "statusDetails" : "there is a problem with url expected to include \nbjss but it came as \nhttps://www.bjss.com/careers ==> expected: <true> but was: <false>",
       "time" : {
