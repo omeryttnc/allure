@@ -23,9 +23,23 @@ pipeline {
 
 
 
-            emailext attachmentsPattern: '**/allure-report/index.html', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
+//             emailext attachmentsPattern: '**/allure-report.zip', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
 
-
+   // Change the recipent address
+    bat "zip -r allure-report.zip allure-report"
+    def mailRecipients = "omeryttnc@gmail.com"
+    env.ForEmailPlugin = env.WORKSPACE
+    if(fileExists('allure-report.zip')){
+        emailext(
+            to: "${mailRecipients}",
+            from: "omeryttnc@gmail.com",
+            subject: "Allure Report",
+            body: "PFA",
+            attachmentsPattern: 'allure-report.zip'
+        )
+    } else{
+        echo("COULD NOT FIND FILE TO ATTACH")
+        }
 
 
 
