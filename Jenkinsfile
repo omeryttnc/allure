@@ -21,8 +21,8 @@ pipeline {
 
                        allure includeProperties: false, jdk: '', results: [[path: '**/allure-results']]
 
-
-    bat "zip -r allure-report.zip allure-report"
+zip zipFile: 'allure-report', archive: false, glob: 'allure-report'
+//     bat "zip -r allure-report.zip allure-report"
 
             emailext attachmentsPattern: 'allure-report.zip', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
 
