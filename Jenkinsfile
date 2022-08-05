@@ -45,4 +45,3 @@ zip zipFile: 'allure-report', archive: false, glob: 'allure-report'
 
        }
 }
-}
