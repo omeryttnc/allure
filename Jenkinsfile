@@ -18,17 +18,14 @@ pipeline {
        post{
             always{
               stage('generate allure report'){
-                       steps{
-                       allure includeProperties: false, jdk: '', results: [[path: '**/allure-results']]
-                            }
-                                                    }
 
-                    stage('send report'){
-                       steps{
+                       allure includeProperties: false, jdk: '', results: [[path: '**/allure-results']]
+
+
+
             emailext attachmentsPattern: '**/allure-report/index.html', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
 
-                            }
-                                         }
+
 
             }
 
