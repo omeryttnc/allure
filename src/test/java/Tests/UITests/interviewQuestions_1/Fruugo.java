@@ -1,8 +1,8 @@
 package Tests.UITests.interviewQuestions_1;
 
 import Tests.BrowserTestBase;
-import Tests.Jenkins_Annotations.Jenkins.SmokeTest;
-import Tests.Jenkins_Annotations.Users.Omer;
+import Tests.junitCalismalari.Jenkins.SmokeTest;
+import Tests.junitCalismalari.Users.Omer;
 import enums.USER.USERINFO;
 import enums.USER.USER_ALL;
 import org.junit.jupiter.api.DisplayName;

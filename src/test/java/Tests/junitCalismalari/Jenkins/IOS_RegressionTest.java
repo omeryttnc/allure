@@ -1,4 +1,4 @@
-package Tests.Jenkins_Annotations.Jenkins;
+package Tests.junitCalismalari.Jenkins;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -10,8 +10,8 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-@Tag("androidRegression")
+@Tag("iosRegression")
 @Test
-@Tag("androidSmoke")
-public @interface Android_RegressionTest {
+@Tag("iosSmoke")
+public @interface IOS_RegressionTest {
 }

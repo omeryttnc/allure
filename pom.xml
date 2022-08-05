@@ -377,132 +377,132 @@
                 </configuration>
             </plugin>
 
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
+<!--            <plugin>-->
+<!--                <artifactId>maven-resources-plugin</artifactId>-->
+<!--                <executions>-->
 
-                    <!--					<execution>-->
-                    <!--						<id>copy-allure-environment-local</id>-->
-                    <!--						<phase>test</phase>-->
-                    <!--						<goals>-->
-                    <!--							<goal>copy-resources</goal>-->
-                    <!--						</goals>-->
-                    <!--						<configuration>-->
-                    <!--							<outputDirectory>C:/Users/Administrator/Desktop/springdeneme/target/allure-results</outputDirectory>-->
-                    <!--&lt;!&ndash;							<outputDirectory>C:/ProgramData/Jenkins/.jenkins/workspace/spring.test.selenium.gui/target/allure-results</outputDirectory>&ndash;&gt;-->
-                    <!--&lt;!&ndash;							<outputDirectory>/var/lib/jenkins/workspace/deneme2/target/allure-results</outputDirectory>&ndash;&gt;-->
-                    <!--							<resources>-->
-                    <!--								<resource>-->
-                    <!--									<directory>src/main/resources</directory>-->
-                    <!--									<includes>-->
-                    <!--										<include>environment.properties</include>-->
-                    <!--									</includes>-->
-                    <!--								</resource>-->
-                    <!--							</resources>-->
-                    <!--						</configuration>-->
-                    <!--					</execution>-->
-                    <!--					<execution>-->
-                    <!--						<id>copy-allure-environment-local-jenkins</id>-->
-                    <!--						<phase>test</phase>-->
-                    <!--						<goals>-->
-                    <!--							<goal>copy-resources</goal>-->
-                    <!--						</goals>-->
-                    <!--						<configuration>-->
-                    <!--&lt;!&ndash;							<outputDirectory>C:/Users/Administrator/Desktop/springdeneme/target/allure-results</outputDirectory>&ndash;&gt;-->
-                    <!--							<outputDirectory>C:/ProgramData/Jenkins/.jenkins/workspace/spring.test.selenium.gui/target/allure-results</outputDirectory>-->
-                    <!--&lt;!&ndash;							<outputDirectory>/var/lib/jenkins/workspace/deneme2/target/allure-results</outputDirectory>&ndash;&gt;-->
-                    <!--							<resources>-->
-                    <!--								<resource>-->
-                    <!--									<directory>src/main/resources</directory>-->
-                    <!--									<includes>-->
-                    <!--										<include>environment.properties</include>-->
-                    <!--									</includes>-->
-                    <!--								</resource>-->
-                    <!--							</resources>-->
-                    <!--						</configuration>-->
-                    <!--					</execution>-->
-                    <execution>
-                        <id>copy-allure-environment-aws</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <!--							<outputDirectory>C:/Users/Administrator/Desktop/springdeneme/target/allure-results</outputDirectory>-->
-                            <!--							<outputDirectory>C:/ProgramData/Jenkins/.jenkins/workspace/spring.test.selenium.gui/target/allure-results</outputDirectory>-->
-                            <outputDirectory>/var/lib/jenkins/workspace/deneme2/target/allure-results</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/resources</directory>
-                                    <includes>
-                                        <include>environment.properties</include>
-                                    </includes>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                    <!--					<execution>-->
-                    <!--						<id>copy-allure-categories-local</id>-->
-                    <!--						<phase>test</phase>-->
-                    <!--						<goals>-->
-                    <!--							<goal>copy-resources</goal>-->
-                    <!--						</goals>-->
-                    <!--						<configuration>-->
-                    <!--							<outputDirectory>C:/Users/Administrator/Desktop/springdeneme/target/allure-results</outputDirectory>-->
-                    <!--&lt;!&ndash;							<outputDirectory>C:/ProgramData/Jenkins/.jenkins/workspace/spring.test.selenium.gui/target/allure-results</outputDirectory>&ndash;&gt;-->
-                    <!--&lt;!&ndash;							<outputDirectory>/var/lib/jenkins/workspace/deneme2/target/allure-results</outputDirectory>&ndash;&gt;-->
-                    <!--							<resources>-->
-                    <!--								<resource>-->
-                    <!--									<directory>src/main/resources</directory>-->
-                    <!--									<includes>-->
-                    <!--										<include>categories.json</include>-->
-                    <!--									</includes>-->
-                    <!--								</resource>-->
-                    <!--							</resources>-->
-                    <!--						</configuration>-->
-                    <!--					</execution>-->
-                    <!--					<execution>-->
-                    <!--						<id>copy-allure-categories-local-jenkins</id>-->
-                    <!--						<phase>test</phase>-->
-                    <!--						<goals>-->
-                    <!--							<goal>copy-resources</goal>-->
-                    <!--						</goals>-->
-                    <!--						<configuration>-->
-                    <!--&lt;!&ndash;							<outputDirectory>C:/Users/Administrator/Desktop/springdeneme/target/allure-results</outputDirectory>&ndash;&gt;-->
-                    <!--							<outputDirectory>C:/ProgramData/Jenkins/.jenkins/workspace/spring.test.selenium.gui/target/allure-results</outputDirectory>-->
-                    <!--&lt;!&ndash;							<outputDirectory>/var/lib/jenkins/workspace/deneme2/target/allure-results</outputDirectory>&ndash;&gt;-->
-                    <!--							<resources>-->
-                    <!--								<resource>-->
-                    <!--									<directory>src/main/resources</directory>-->
-                    <!--									<includes>-->
-                    <!--										<include>categories.json</include>-->
-                    <!--									</includes>-->
-                    <!--								</resource>-->
-                    <!--							</resources>-->
-                    <!--						</configuration>-->
-                    <!--					</execution>-->
-                    <execution>
-                        <id>copy-allure-categories-aws</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <!--							<outputDirectory>C:/Users/Administrator/Desktop/springdeneme/target/allure-results</outputDirectory>-->
-                            <!--							<outputDirectory>C:/ProgramData/Jenkins/.jenkins/workspace/spring.test.selenium.gui/target/allure-results</outputDirectory>-->
-                            <outputDirectory>/var/lib/jenkins/workspace/deneme2/target/allure-results</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/resources</directory>
-                                    <includes>
-                                        <include>categories.json</include>
-                                    </includes>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+<!--                    &lt;!&ndash;					<execution>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						<id>copy-allure-environment-local</id>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						<phase>test</phase>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						<goals>&ndash;&gt;-->
+<!--                    &lt;!&ndash;							<goal>copy-resources</goal>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						</goals>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						<configuration>&ndash;&gt;-->
+<!--                    &lt;!&ndash;							<outputDirectory>C:/Users/Administrator/Desktop/springdeneme/target/allure-results</outputDirectory>&ndash;&gt;-->
+<!--                    &lt;!&ndash;&lt;!&ndash;							<outputDirectory>C:/ProgramData/Jenkins/.jenkins/workspace/spring.test.selenium.gui/target/allure-results</outputDirectory>&ndash;&gt;&ndash;&gt;-->
+<!--                    &lt;!&ndash;&lt;!&ndash;							<outputDirectory>/var/lib/jenkins/workspace/deneme2/target/allure-results</outputDirectory>&ndash;&gt;&ndash;&gt;-->
+<!--                    &lt;!&ndash;							<resources>&ndash;&gt;-->
+<!--                    &lt;!&ndash;								<resource>&ndash;&gt;-->
+<!--                    &lt;!&ndash;									<directory>src/main/resources</directory>&ndash;&gt;-->
+<!--                    &lt;!&ndash;									<includes>&ndash;&gt;-->
+<!--                    &lt;!&ndash;										<include>environment.properties</include>&ndash;&gt;-->
+<!--                    &lt;!&ndash;									</includes>&ndash;&gt;-->
+<!--                    &lt;!&ndash;								</resource>&ndash;&gt;-->
+<!--                    &lt;!&ndash;							</resources>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						</configuration>&ndash;&gt;-->
+<!--                    &lt;!&ndash;					</execution>&ndash;&gt;-->
+<!--                    &lt;!&ndash;					<execution>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						<id>copy-allure-environment-local-jenkins</id>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						<phase>test</phase>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						<goals>&ndash;&gt;-->
+<!--                    &lt;!&ndash;							<goal>copy-resources</goal>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						</goals>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						<configuration>&ndash;&gt;-->
+<!--                    &lt;!&ndash;&lt;!&ndash;							<outputDirectory>C:/Users/Administrator/Desktop/springdeneme/target/allure-results</outputDirectory>&ndash;&gt;&ndash;&gt;-->
+<!--                    &lt;!&ndash;							<outputDirectory>C:/ProgramData/Jenkins/.jenkins/workspace/spring.test.selenium.gui/target/allure-results</outputDirectory>&ndash;&gt;-->
+<!--                    &lt;!&ndash;&lt;!&ndash;							<outputDirectory>/var/lib/jenkins/workspace/deneme2/target/allure-results</outputDirectory>&ndash;&gt;&ndash;&gt;-->
+<!--                    &lt;!&ndash;							<resources>&ndash;&gt;-->
+<!--                    &lt;!&ndash;								<resource>&ndash;&gt;-->
+<!--                    &lt;!&ndash;									<directory>src/main/resources</directory>&ndash;&gt;-->
+<!--                    &lt;!&ndash;									<includes>&ndash;&gt;-->
+<!--                    &lt;!&ndash;										<include>environment.properties</include>&ndash;&gt;-->
+<!--                    &lt;!&ndash;									</includes>&ndash;&gt;-->
+<!--                    &lt;!&ndash;								</resource>&ndash;&gt;-->
+<!--                    &lt;!&ndash;							</resources>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						</configuration>&ndash;&gt;-->
+<!--                    &lt;!&ndash;					</execution>&ndash;&gt;-->
+<!--                    <execution>-->
+<!--                        <id>copy-allure-environment-aws</id>-->
+<!--                        <phase>test</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>copy-resources</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            &lt;!&ndash;							<outputDirectory>C:/Users/Administrator/Desktop/springdeneme/target/allure-results</outputDirectory>&ndash;&gt;-->
+<!--                            &lt;!&ndash;							<outputDirectory>C:/ProgramData/Jenkins/.jenkins/workspace/spring.test.selenium.gui/target/allure-results</outputDirectory>&ndash;&gt;-->
+<!--                            <outputDirectory>/var/lib/jenkins/workspace/deneme2/target/allure-results</outputDirectory>-->
+<!--                            <resources>-->
+<!--                                <resource>-->
+<!--                                    <directory>src/main/resources</directory>-->
+<!--                                    <includes>-->
+<!--                                        <include>environment.properties</include>-->
+<!--                                    </includes>-->
+<!--                                </resource>-->
+<!--                            </resources>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                    &lt;!&ndash;					<execution>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						<id>copy-allure-categories-local</id>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						<phase>test</phase>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						<goals>&ndash;&gt;-->
+<!--                    &lt;!&ndash;							<goal>copy-resources</goal>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						</goals>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						<configuration>&ndash;&gt;-->
+<!--                    &lt;!&ndash;							<outputDirectory>C:/Users/Administrator/Desktop/springdeneme/target/allure-results</outputDirectory>&ndash;&gt;-->
+<!--                    &lt;!&ndash;&lt;!&ndash;							<outputDirectory>C:/ProgramData/Jenkins/.jenkins/workspace/spring.test.selenium.gui/target/allure-results</outputDirectory>&ndash;&gt;&ndash;&gt;-->
+<!--                    &lt;!&ndash;&lt;!&ndash;							<outputDirectory>/var/lib/jenkins/workspace/deneme2/target/allure-results</outputDirectory>&ndash;&gt;&ndash;&gt;-->
+<!--                    &lt;!&ndash;							<resources>&ndash;&gt;-->
+<!--                    &lt;!&ndash;								<resource>&ndash;&gt;-->
+<!--                    &lt;!&ndash;									<directory>src/main/resources</directory>&ndash;&gt;-->
+<!--                    &lt;!&ndash;									<includes>&ndash;&gt;-->
+<!--                    &lt;!&ndash;										<include>categories.json</include>&ndash;&gt;-->
+<!--                    &lt;!&ndash;									</includes>&ndash;&gt;-->
+<!--                    &lt;!&ndash;								</resource>&ndash;&gt;-->
+<!--                    &lt;!&ndash;							</resources>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						</configuration>&ndash;&gt;-->
+<!--                    &lt;!&ndash;					</execution>&ndash;&gt;-->
+<!--                    &lt;!&ndash;					<execution>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						<id>copy-allure-categories-local-jenkins</id>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						<phase>test</phase>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						<goals>&ndash;&gt;-->
+<!--                    &lt;!&ndash;							<goal>copy-resources</goal>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						</goals>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						<configuration>&ndash;&gt;-->
+<!--                    &lt;!&ndash;&lt;!&ndash;							<outputDirectory>C:/Users/Administrator/Desktop/springdeneme/target/allure-results</outputDirectory>&ndash;&gt;&ndash;&gt;-->
+<!--                    &lt;!&ndash;							<outputDirectory>C:/ProgramData/Jenkins/.jenkins/workspace/spring.test.selenium.gui/target/allure-results</outputDirectory>&ndash;&gt;-->
+<!--                    &lt;!&ndash;&lt;!&ndash;							<outputDirectory>/var/lib/jenkins/workspace/deneme2/target/allure-results</outputDirectory>&ndash;&gt;&ndash;&gt;-->
+<!--                    &lt;!&ndash;							<resources>&ndash;&gt;-->
+<!--                    &lt;!&ndash;								<resource>&ndash;&gt;-->
+<!--                    &lt;!&ndash;									<directory>src/main/resources</directory>&ndash;&gt;-->
+<!--                    &lt;!&ndash;									<includes>&ndash;&gt;-->
+<!--                    &lt;!&ndash;										<include>categories.json</include>&ndash;&gt;-->
+<!--                    &lt;!&ndash;									</includes>&ndash;&gt;-->
+<!--                    &lt;!&ndash;								</resource>&ndash;&gt;-->
+<!--                    &lt;!&ndash;							</resources>&ndash;&gt;-->
+<!--                    &lt;!&ndash;						</configuration>&ndash;&gt;-->
+<!--                    &lt;!&ndash;					</execution>&ndash;&gt;-->
+<!--                    <execution>-->
+<!--                        <id>copy-allure-categories-aws</id>-->
+<!--                        <phase>test</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>copy-resources</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            &lt;!&ndash;							<outputDirectory>C:/Users/Administrator/Desktop/springdeneme/target/allure-results</outputDirectory>&ndash;&gt;-->
+<!--                            &lt;!&ndash;							<outputDirectory>C:/ProgramData/Jenkins/.jenkins/workspace/spring.test.selenium.gui/target/allure-results</outputDirectory>&ndash;&gt;-->
+<!--                            <outputDirectory>/var/lib/jenkins/workspace/deneme2/target/allure-results</outputDirectory>-->
+<!--                            <resources>-->
+<!--                                <resource>-->
+<!--                                    <directory>src/main/resources</directory>-->
+<!--                                    <includes>-->
+<!--                                        <include>categories.json</include>-->
+<!--                                    </includes>-->
+<!--                                </resource>-->
+<!--                            </resources>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
 
 <!--            <plugin>-->
 <!--                <groupId>org.apache.maven.plugins</groupId>-->
@@ -527,7 +527,7 @@
                 <plugins>
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M1</version>
+                        <version>3.0.0-M5</version>
                         <configuration>
                             <groups>smoke</groups>
                         </configuration>
@@ -542,7 +542,7 @@
                 <plugins>
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M1</version>
+                        <version>3.0.0-M5</version>
                         <configuration>
                             <groups>smokeTestPASSED</groups>
                         </configuration>
@@ -557,7 +557,7 @@
                 <plugins>
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M1</version>
+                        <version>3.0.0-M5</version>
                         <configuration>
                             <groups>smokeTestFAILED</groups>
                         </configuration>
@@ -572,7 +572,7 @@
                 <plugins>
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M1</version>
+                        <version>3.0.0-M5</version>
                         <configuration>
                             <groups>omer</groups>
                         </configuration>
@@ -587,7 +587,7 @@
                 <plugins>
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M1</version>
+                        <version>3.0.0-M5</version>
                         <configuration>
                             <groups>regression,smoke</groups>
                         </configuration>
@@ -602,7 +602,7 @@
             <plugins>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.0.0-M1</version>
+                    <version>3.0.0-M5</version>
                     <configuration>
                         <groups>sistemdekiHatadanDolayiCalismiyor</groups>
                     </configuration>
@@ -617,7 +617,7 @@
                 <plugins>
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M1</version>
+                        <version>3.0.0-M5</version>
                         <configuration>
                             <groups>androidSmoke</groups>
                         </configuration>
@@ -632,7 +632,7 @@
                 <plugins>
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M1</version>
+                        <version>3.0.0-M5</version>
                         <configuration>
                             <groups>androidRegression</groups>
                         </configuration>
@@ -647,7 +647,7 @@
                 <plugins>
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M1</version>
+                        <version>3.0.0-M5</version>
                         <configuration>
                             <groups>iosSmoke</groups>
                         </configuration>
@@ -662,7 +662,7 @@
                 <plugins>
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M1</version>
+                        <version>3.0.0-M5</version>
                         <configuration>
                             <groups>iosRegression</groups>
                         </configuration>

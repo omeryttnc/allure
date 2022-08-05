@@ -1,4 +1,4 @@
-package Tests.Jenkins_Annotations.Jenkins;
+package Tests.junitCalismalari.Jenkins;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -8,9 +8,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.METHOD)
+@Target({ElementType.TYPE,ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-@Tag("nonregression")
+@Tag("jenkinsHatalari")
 @Test
-public @interface NonRegressionTest {
+public @interface JenkinsHatalari {
 }

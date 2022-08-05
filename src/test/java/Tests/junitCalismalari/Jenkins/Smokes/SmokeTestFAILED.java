@@ -1,4 +1,4 @@
-package Tests.Jenkins_Annotations.Jenkins;
+package Tests.junitCalismalari.Jenkins.Smokes;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -8,9 +8,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target({ElementType.TYPE,ElementType.METHOD})
+@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-@Tag("sistemdekiHatadanDolayiCalismiyor")
+@Tag("smokeTestFAILED")
 @Test
-public @interface SistemdekiHatadanDolayiCalismiyor {
+public @interface SmokeTestFAILED {
 }

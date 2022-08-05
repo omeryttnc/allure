@@ -1,4 +1,4 @@
-package Tests.Jenkins_Annotations.Conditions;
+package Tests.junitCalismalari.Conditions;
 
 import config.ConfigReader;
 

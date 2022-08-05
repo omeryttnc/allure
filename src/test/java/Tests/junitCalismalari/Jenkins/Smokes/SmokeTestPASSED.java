@@ -1,4 +1,4 @@
-package Tests.Jenkins_Annotations.Jenkins;
+package Tests.junitCalismalari.Jenkins.Smokes;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -10,8 +10,7 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-@Tag("iosRegression")
+@Tag("smokeTestPASSED")
 @Test
-@Tag("iosSmoke")
-public @interface IOS_RegressionTest {
+public @interface SmokeTestPASSED {
 }

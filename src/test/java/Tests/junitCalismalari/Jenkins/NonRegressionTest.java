@@ -1,4 +1,4 @@
-package Tests.Jenkins_Annotations.Jenkins.Smokes;
+package Tests.junitCalismalari.Jenkins;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-@Tag("smokeTestFAILED")
+@Tag("nonregression")
 @Test
-public @interface SmokeTestFAILED {
+public @interface NonRegressionTest {
 }

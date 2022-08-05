@@ -1,7 +1,6 @@
-package Tests.Jenkins_Annotations.Jenkins;
+package Tests.junitCalismalari.Conditions;
 
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIf;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,7 +9,6 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.TYPE,ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-@Tag("jenkinsHatalari")
-@Test
-public @interface JenkinsHatalari {
+@EnabledIf("Tests.junitCalismalari.Conditions.Conditions#isFirefox")
+public @interface Firefox {
 }

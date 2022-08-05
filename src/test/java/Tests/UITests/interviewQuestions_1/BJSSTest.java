@@ -1,6 +1,6 @@
 package Tests.UITests.interviewQuestions_1;
 
-import Tests.Jenkins_Annotations.Users.Omer;
+import Tests.junitCalismalari.Users.Omer;
 import enums.LINKS;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.*;

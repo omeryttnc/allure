@@ -1,14 +1,16 @@
-package Tests.Jenkins_Annotations.Users;
+package Tests.junitCalismalari.Jenkins;
 
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target({ElementType.TYPE,ElementType.METHOD})
+@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-@Tag("omer")
-public @interface Omer {
+@Tag("androidSmoke")
+@Test
+public @interface Android_SmokeTest {
 }

@@ -5,7 +5,7 @@
     "name" : "Tests.UITests.interviewQuestions_1.BJSSTest",
     "children" : [ {
       "name" : "test4",
-      "uid" : "e87814fe69524cbb",
+      "uid" : "fc45f9fa85fd6a88",
       "parentUid" : "1e575f15b8dfdb7b95315f2b5fd50cfc",
       "status" : "passed",
       "time" : {
@@ -18,7 +18,7 @@
       "parameters" : [ ]
     }, {
       "name" : "test3",
-      "uid" : "f3048e37f046bacb",
+      "uid" : "67b8c5021c0f3a5b",
       "parentUid" : "1e575f15b8dfdb7b95315f2b5fd50cfc",
       "status" : "failed",
       "time" : {
