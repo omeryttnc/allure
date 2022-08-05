@@ -36,9 +36,9 @@ zip zipFile: 'allure-report', archive: false, glob: 'allure-report'
 //             subject: "Allure Report",
 //             body: "PFA",
 //             attachmentsPattern: 'allure-report.zip'
-        )
-    } else{
-        echo("COULD NOT FIND FILE TO ATTACH")
+//         )
+//     } else{
+//         echo("COULD NOT FIND FILE TO ATTACH")
         }
 
 
