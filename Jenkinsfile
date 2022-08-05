@@ -17,7 +17,7 @@ pipeline {
 
        post{
             always{
-              stage('generate allure report'){
+
 
                        allure includeProperties: false, jdk: '', results: [[path: '**/allure-results']]
 
@@ -27,7 +27,7 @@ pipeline {
 
 
 
-            }
+
 
        }
 }
