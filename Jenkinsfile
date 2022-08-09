@@ -12,23 +12,35 @@ pipeline {
                 }
                                       }
 
-
+      stage('reports') {
+           steps {
+              script {
+                  allure([
+                    includeProperties: false,
+                    jdk: '',
+                    properties: [],
+                    reportBuildPolicy: 'ALWAYS',
+                    results: [[path: 'target/allure-results']]
+                        ])
+                     }
+                }
+                       }
             }
 
        post{
             always{
 
 
-                       allure includeProperties: false, jdk: '', results: [[path: '**/allure-results']]
+                       //allure includeProperties: false, jdk: '', results: [[path: '**/allure-results']]
 
-zip zipFile: 'allure-report', archive: false, glob: 'allure-report'
+// zip zipFile: 'allure-report', archive: false, glob: 'allure-report'
 //     bat "zip -r allure-report.zip allure-report"
 
             emailext attachmentsPattern: 'allure-report.zip', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
 
    // Change the recipent address
 //     def mailRecipients = "omeryttnc@gmail.com"
-//     env.ForEmailPlugin = env.WORKSPACE
+//  git    env.ForEmailPlugin = env.WORKSPACE
 //     if(fileExists('allure-report.zip')){
 //         emailext(
 //             to: "${mailRecipients}",
