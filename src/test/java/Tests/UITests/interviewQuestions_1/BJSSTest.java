@@ -36,7 +36,7 @@ public class BJSSTest {
         chromeDriver.quit();
     }
 
-    // @Omer
+     @Omer
     @Epic("BJSS")
     @Feature("FEATURE")
     @Story("US_01")
@@ -48,7 +48,7 @@ public class BJSSTest {
         System.out.println(chromeDriver.getCurrentUrl());
     }
 
-    // @Omer
+     @Omer
     @Test
     @Epic("BJSS")
     @Feature("FEATURE")
@@ -63,7 +63,7 @@ public class BJSSTest {
     }
 
     @Test
-    // @Omer
+     @Omer
     @Epic("BJSS")
     @Feature("FEATURE")
     @Story("US_03")
