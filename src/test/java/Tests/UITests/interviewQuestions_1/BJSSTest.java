@@ -36,7 +36,7 @@ public class BJSSTest {
         chromeDriver.quit();
     }
 
-    // @Omer
+     @Omer
     @Epic("BJSS")
     @Feature("FEATURE")
     @Story("US_01")
