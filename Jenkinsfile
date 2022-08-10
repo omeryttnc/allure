@@ -11,24 +11,41 @@ pipeline {
                  bat 'mvn clean test -P omer'
                 }
                                       }
-
-      stage('reports') {
-           steps {
-              script {
-                  allure([
-                    includeProperties: false,
-                    jdk: '',
-                    properties: [],
-                    reportBuildPolicy: 'ALWAYS',
-                    results: [[path: 'target/allure-results']]
-                        ])
-                     }
-                }
-                       }
             }
-
        post{
             always{
+            emailext attachmentsPattern: 'allure-report/index.html', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
+
+                 }
+            }
+      stages {
+              stage('omer branch calisti') {
+                  steps {
+                       bat 'mvn clean test -P omer'
+                      }
+                                            }
+                  }
+             post{
+                  always{
+                  emailext attachmentsPattern: 'allure-report/index.html', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
+
+                       }
+                  }
+}
+//       stage('reports') {
+//            steps {
+//               script {
+//                   allure([
+//                     includeProperties: false,
+//                     jdk: '',
+//                     properties: [],
+//                     reportBuildPolicy: 'ALWAYS',
+//                     results: [[path: 'target/allure-results']]
+//                         ])
+//                      }
+//                 }
+//                        }
+
 
 
                        //allure includeProperties: false, jdk: '', results: [[path: '**/allure-results']]
@@ -36,7 +53,6 @@ pipeline {
 // zip zipFile: 'allure-report', archive: false, glob: 'allure-report'
 //     bat "zip -r allure-report.zip allure-report"
 
-            emailext attachmentsPattern: 'allure-report.zip', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
 
    // Change the recipent address
 //     def mailRecipients = "omeryttnc@gmail.com"
@@ -51,9 +67,3 @@ pipeline {
 //         )
 //     } else{
 //         echo("COULD NOT FIND FILE TO ATTACH")
-        }
-
-
-
-       }
-}
