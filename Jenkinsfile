@@ -8,23 +8,9 @@ pipeline {
       stages {
         stage('omer branch calisti') {
             steps {
-                 bat 'mvn clean test -P omer'
+                 bat 'mvn clean install -fn -P omer '
                 }
                                       }
-
-              stage('reports') {
-                   steps {
-                      script {
-                          allure([
-                            includeProperties: false,
-                            jdk: '',
-                            properties: [],
-                            reportBuildPolicy: 'ALWAYS',
-                            results: [[path: 'target/allure-results']]
-                                ])
-                             }
-                        }
-                               }
             }
        post{
             always{
