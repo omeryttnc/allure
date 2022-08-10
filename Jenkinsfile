@@ -28,6 +28,8 @@ pipeline {
             }
        post{
             always{
+           allure includeProperties: false, jdk: '', results: [[path: '**/allure-results']]
+
             emailext attachmentsPattern: 'allure-report/index.html', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
 
                  }
@@ -51,7 +53,6 @@ pipeline {
 
 
 
-                       //allure includeProperties: false, jdk: '', results: [[path: '**/allure-results']]
 
 // zip zipFile: 'allure-report', archive: false, glob: 'allure-report'
 //     bat "zip -r allure-report.zip allure-report"
