@@ -11,6 +11,20 @@ pipeline {
                  bat 'mvn clean test -P omer'
                 }
                                       }
+
+              stage('reports') {
+                   steps {
+                      script {
+                          allure([
+                            includeProperties: false,
+                            jdk: '',
+                            properties: [],
+                            reportBuildPolicy: 'ALWAYS',
+                            results: [[path: 'target/allure-results']]
+                                ])
+                             }
+                        }
+                               }
             }
        post{
             always{
@@ -33,19 +47,7 @@ pipeline {
 //                        }
 //                   }
 
-//       stage('reports') {
-//            steps {
-//               script {
-//                   allure([
-//                     includeProperties: false,
-//                     jdk: '',
-//                     properties: [],
-//                     reportBuildPolicy: 'ALWAYS',
-//                     results: [[path: 'target/allure-results']]
-//                         ])
-//                      }
-//                 }
-//                        }
+
 
 
 
