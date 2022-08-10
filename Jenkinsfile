@@ -18,19 +18,20 @@ pipeline {
 
                  }
             }
-      stages {
-              stage('omer branch calisti') {
-                  steps {
-                       bat 'mvn clean test -P omer'
-                      }
-                                            }
-                  }
-             post{
-                  always{
-                  emailext attachmentsPattern: 'allure-report/index.html', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
-
-                       }
-                  }
+}
+//       stages {
+//               stage('omer branch calisti') {
+//                   steps {
+//                        bat 'mvn clean test -P omer'
+//                       }
+//                                             }
+//                   }
+//              post{
+//                   always{
+//                   emailext attachmentsPattern: 'allure-report/index.html', body: '', recipientProviders: [buildUser()], subject: '', to: 'omeryttnc@gmail.com'
+//
+//                        }
+//                   }
 
 //       stage('reports') {
 //            steps {
