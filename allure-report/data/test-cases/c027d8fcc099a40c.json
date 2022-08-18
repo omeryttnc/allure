@@ -1,0 +1,73 @@
+{
+  "uid" : "c027d8fcc099a40c",
+  "name" : "[2] nu=3",
+  "fullName" : "Tests.AllureReport.Test3.name",
+  "historyId" : "2ef25cf31db06eb199a129557d6ba3ee",
+  "time" : {
+    "start" : 1660239100122,
+    "stop" : 1660239100157,
+    "duration" : 35
+  },
+  "description" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "Can user able to receive email after purchasing weekly order"
+  }, {
+    "name" : "feature",
+    "value" : "Weekly"
+  }, {
+    "name" : "epic",
+    "value" : "Weekly Order"
+  }, {
+    "name" : "owner",
+    "value" : "OMER"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-SVJGT9O"
+  }, {
+    "name" : "thread",
+    "value" : "6080@DESKTOP-SVJGT9O.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "Tests.AllureReport.Test3"
+  }, {
+    "name" : "testClass",
+    "value" : "Tests.AllureReport.Test3"
+  }, {
+    "name" : "testMethod",
+    "value" : "name"
+  }, {
+    "name" : "suite",
+    "value" : "Tests.AllureReport.Test3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "owner" : "OMER",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c027d8fcc099a40c.json",
+  "parameterValues" : [ ]
+}

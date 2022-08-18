@@ -1,5 +1,5 @@
 {
-  "b3edd8b4dfb8339d5384df721a1c723a" : {
+  "369b8c6dc2bc66ef04d91d12447867c1" : {
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
@@ -9,32 +9,126 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "fc45f9fa85fd6a88",
+      "uid" : "45a7efe57da04eea",
       "status" : "passed",
       "time" : {
-        "start" : 1659559927713,
-        "stop" : 1659559932532,
-        "duration" : 4819
+        "start" : 1660239100387,
+        "stop" : 1660239100395,
+        "duration" : 8
       }
     } ]
   },
-  "5c3b4f83cc42598a1eb1411f355d6739" : {
+  "795a236ee1c047b001a652813ace3145" : {
     "statistic" : {
-      "failed" : 1,
+      "failed" : 0,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 0,
+      "passed" : 1,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "67b8c5021c0f3a5b",
-      "status" : "failed",
-      "statusDetails" : "there is a problem with url expected to include \nbjss but it came as \nhttps://www.bjss.com/careers ==> expected: <true> but was: <false>",
+      "uid" : "19767ae5f961af7f",
+      "status" : "passed",
       "time" : {
-        "start" : 1659559968614,
-        "stop" : 1659559978826,
-        "duration" : 10212
+        "start" : 1660239100277,
+        "stop" : 1660239100307,
+        "duration" : 30
+      }
+    } ]
+  },
+  "99d473f92544d812426ca2eb0739d047" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "1bfe3a64666094b2",
+      "status" : "passed",
+      "time" : {
+        "start" : 1660239098645,
+        "stop" : 1660239099010,
+        "duration" : 365
+      }
+    } ]
+  },
+  "2ef25cf31db06eb199a129557d6ba3ee" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c027d8fcc099a40c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1660239100122,
+        "stop" : 1660239100157,
+        "duration" : 35
+      }
+    } ]
+  },
+  "ee06d37025c12ee63481a15dd975c3b0" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "65516bc93e8d12e9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1660239100428,
+        "stop" : 1660239100441,
+        "duration" : 13
+      }
+    } ]
+  },
+  "1921494d75eb9513fae8814208a73758" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e5352a1c0982776a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1660239100510,
+        "stop" : 1660239100523,
+        "duration" : 13
+      }
+    } ]
+  },
+  "6df213f94321abf5feae2aeea42f9640" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ef773c798d85664b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1660239100578,
+        "stop" : 1660239100611,
+        "duration" : 33
       }
     } ]
   }

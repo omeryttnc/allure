@@ -2,42 +2,107 @@
   "uid" : "b1a8273437954620fa374b796ffaacdd",
   "name" : "behaviors",
   "children" : [ {
-    "name" : "test4()",
-    "uid" : "fc45f9fa85fd6a88",
-    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
-    "status" : "passed",
-    "time" : {
-      "start" : 1659559927713,
-      "stop" : 1659559932532,
-      "duration" : 4819
-    },
-    "flaky" : false,
-    "newFailed" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : "BJSS",
+    "name" : "Weekly Order",
     "children" : [ {
-      "name" : "FEATURE",
+      "name" : "Weekly",
       "children" : [ {
-        "name" : "US_03",
+        "name" : "Can user able to receive email after purchasing weekly order",
         "children" : [ {
-          "name" : "test3()",
-          "uid" : "67b8c5021c0f3a5b",
-          "parentUid" : "aa6e8fea0260060dbed5d881b30f64fa",
-          "status" : "failed",
+          "name" : "[1] nu=2",
+          "uid" : "1bfe3a64666094b2",
+          "parentUid" : "67cbb0a1dfa54b42d795a351cfc7d987",
+          "status" : "passed",
           "time" : {
-            "start" : 1659559968614,
-            "stop" : 1659559978826,
-            "duration" : 10212
+            "start" : 1660239098645,
+            "stop" : 1660239099010,
+            "duration" : 365
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "[2] nu=3",
+          "uid" : "c027d8fcc099a40c",
+          "parentUid" : "67cbb0a1dfa54b42d795a351cfc7d987",
+          "status" : "passed",
+          "time" : {
+            "start" : 1660239100122,
+            "stop" : 1660239100157,
+            "duration" : 35
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "[3] nu=4",
+          "uid" : "19767ae5f961af7f",
+          "parentUid" : "67cbb0a1dfa54b42d795a351cfc7d987",
+          "status" : "passed",
+          "time" : {
+            "start" : 1660239100277,
+            "stop" : 1660239100307,
+            "duration" : 30
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "[4] nu=5",
+          "uid" : "45a7efe57da04eea",
+          "parentUid" : "67cbb0a1dfa54b42d795a351cfc7d987",
+          "status" : "passed",
+          "time" : {
+            "start" : 1660239100387,
+            "stop" : 1660239100395,
+            "duration" : 8
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "[5] nu=6",
+          "uid" : "65516bc93e8d12e9",
+          "parentUid" : "67cbb0a1dfa54b42d795a351cfc7d987",
+          "status" : "passed",
+          "time" : {
+            "start" : 1660239100428,
+            "stop" : 1660239100441,
+            "duration" : 13
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "[6] nu=7",
+          "uid" : "e5352a1c0982776a",
+          "parentUid" : "67cbb0a1dfa54b42d795a351cfc7d987",
+          "status" : "passed",
+          "time" : {
+            "start" : 1660239100510,
+            "stop" : 1660239100523,
+            "duration" : 13
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "[7] nu=8",
+          "uid" : "ef773c798d85664b",
+          "parentUid" : "67cbb0a1dfa54b42d795a351cfc7d987",
+          "status" : "passed",
+          "time" : {
+            "start" : 1660239100578,
+            "stop" : 1660239100611,
+            "duration" : 33
           },
           "flaky" : false,
           "newFailed" : false,
           "parameters" : [ ]
         } ],
-        "uid" : "aa6e8fea0260060dbed5d881b30f64fa"
+        "uid" : "67cbb0a1dfa54b42d795a351cfc7d987"
       } ],
-      "uid" : "9676bd1f9ec3c7638de353bc506f1cd4"
+      "uid" : "53de3d2e72296511762415362107625f"
     } ],
-    "uid" : "ad6e17e3bde906941afc01a8c2fdb5df"
+    "uid" : "a2997eed366a71b341583984ea67284c"
   } ]
 }

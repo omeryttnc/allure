@@ -1,15 +1,15 @@
 {
   "total" : 1,
   "items" : [ {
-    "uid" : "600d767450de8136b230e42904a88aad",
-    "name" : "Tests.UITests.interviewQuestions_1.BJSSTest",
+    "uid" : "5c3d4b9c5150e231111132d863558a27",
+    "name" : "Tests.AllureReport.Test3",
     "statistic" : {
-      "failed" : 1,
+      "failed" : 0,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 7,
       "unknown" : 0,
-      "total" : 2
+      "total" : 7
     }
   } ]
 }

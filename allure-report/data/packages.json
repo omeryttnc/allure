@@ -2,34 +2,99 @@
   "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
   "name" : "packages",
   "children" : [ {
-    "name" : "Tests.UITests.interviewQuestions_1.BJSSTest",
+    "name" : "Tests.AllureReport.Test3",
     "children" : [ {
-      "name" : "test4",
-      "uid" : "fc45f9fa85fd6a88",
-      "parentUid" : "1e575f15b8dfdb7b95315f2b5fd50cfc",
+      "name" : "name",
+      "uid" : "1bfe3a64666094b2",
+      "parentUid" : "f02f3404f1044eda46cfceac0f72c08c",
       "status" : "passed",
       "time" : {
-        "start" : 1659559927713,
-        "stop" : 1659559932532,
-        "duration" : 4819
+        "start" : 1660239098645,
+        "stop" : 1660239099010,
+        "duration" : 365
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
-      "name" : "test3",
-      "uid" : "67b8c5021c0f3a5b",
-      "parentUid" : "1e575f15b8dfdb7b95315f2b5fd50cfc",
-      "status" : "failed",
+      "name" : "name",
+      "uid" : "c027d8fcc099a40c",
+      "parentUid" : "f02f3404f1044eda46cfceac0f72c08c",
+      "status" : "passed",
       "time" : {
-        "start" : 1659559968614,
-        "stop" : 1659559978826,
-        "duration" : 10212
+        "start" : 1660239100122,
+        "stop" : 1660239100157,
+        "duration" : 35
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "name",
+      "uid" : "19767ae5f961af7f",
+      "parentUid" : "f02f3404f1044eda46cfceac0f72c08c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1660239100277,
+        "stop" : 1660239100307,
+        "duration" : 30
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "name",
+      "uid" : "45a7efe57da04eea",
+      "parentUid" : "f02f3404f1044eda46cfceac0f72c08c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1660239100387,
+        "stop" : 1660239100395,
+        "duration" : 8
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "name",
+      "uid" : "65516bc93e8d12e9",
+      "parentUid" : "f02f3404f1044eda46cfceac0f72c08c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1660239100428,
+        "stop" : 1660239100441,
+        "duration" : 13
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "name",
+      "uid" : "e5352a1c0982776a",
+      "parentUid" : "f02f3404f1044eda46cfceac0f72c08c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1660239100510,
+        "stop" : 1660239100523,
+        "duration" : 13
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "name",
+      "uid" : "ef773c798d85664b",
+      "parentUid" : "f02f3404f1044eda46cfceac0f72c08c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1660239100578,
+        "stop" : 1660239100611,
+        "duration" : 33
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     } ],
-    "uid" : "Tests.UITests.interviewQuestions_1.BJSSTest"
+    "uid" : "Tests.AllureReport.Test3"
   } ]
 }
